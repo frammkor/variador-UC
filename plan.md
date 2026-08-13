@@ -1,7 +1,7 @@
 # Plan for the Landing Page
 
 So here is a descriptions of the sections we want to have for the Dandy Dancers kickstarting landing page.
-Base on this document crate the site, try to keep it component based so it can be easy to maintain and expand. Do both Spanish and English texts.
+Base on this document crate the site, try to keep it component based so it can be easy to maintain and expand. Do both Spanish and English texts. Focus first on having the content, the we will work more on the style and polishing, same for the look and feel.
 
 ## Sections
 1. Hero Section

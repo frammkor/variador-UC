@@ -1,6 +1,5 @@
 <script>
-  import TitlePage from '$lib/TitlePage.svelte';
+  import LandingPage from '$lib/LandingPage.svelte';
 </script>
 
-<TitlePage language="es" />
-
+<LandingPage language="es" />
