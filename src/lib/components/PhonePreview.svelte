@@ -8,8 +8,6 @@
 </script>
 
 <div class="preview">
-  <p class="label">{copy.label}</p>
-
   <button class="phone" type="button" onclick={nextStep} aria-label={copy.nextStep}>
     <svg viewBox="0 0 280 540" aria-hidden="true">
       <rect x="4" y="4" width="272" height="532" rx="42" fill="#fff" stroke="currentColor" stroke-width="8" />
@@ -32,6 +30,8 @@
       ></button>
     {/each}
   </div>
+
+  <p class="label">{copy.label}</p>
 </div>
 
 <style>
@@ -41,7 +41,7 @@
   }
 
   .label {
-    margin-bottom: 0.75rem;
+    margin: 0.75rem 0 0;
     color: var(--color-muted);
     font-size: 0.6875rem;
   }
@@ -107,4 +107,3 @@
     background: var(--color-primary);
   }
 </style>
-

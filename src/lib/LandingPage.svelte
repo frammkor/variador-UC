@@ -16,7 +16,12 @@
   <meta name="description" content={copy.metaDescription} />
 </svelte:head>
 
-<SiteHeader {language} label={copy.languageSelector} />
+<SiteHeader
+  {language}
+  copy={copy.navigation}
+  homeHref="./"
+  languageLinks={{ en: '../en/', es: '../es/' }}
+/>
 <main>
   <HeroSection copy={copy.hero} />
   <TaxiDancerSection copy={copy.taxiDancer} />
@@ -24,4 +29,3 @@
   <AboutSection copy={copy.about} />
 </main>
 <SiteFooter copy={copy.footer} />
-

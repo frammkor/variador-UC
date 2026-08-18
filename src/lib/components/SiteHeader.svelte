@@ -1,23 +1,25 @@
 <script>
-  let { language, label } = $props();
+  import { asset } from '$app/paths';
+
+  let { language, copy, homeHref, languageLinks } = $props();
 </script>
 
 <header>
   <div class="container header-content">
-    <a class="brand" href="./" aria-label="Dandy Dancers">
-      <img src="../images/DD-logo.png" alt="Dandy Dancers" />
+    <a class="brand" href={homeHref} aria-label="Dandy Dancers">
+      <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
     </a>
 
-    <nav aria-label={label}>
+    <nav aria-label={copy.languageSelector}>
       <a
-        href="../en/"
+        href={languageLinks.en}
         lang="en"
         aria-current={language === 'en' ? 'page' : undefined}
         data-sveltekit-reload>EN</a
       >
       <span aria-hidden="true">/</span>
       <a
-        href="../es/"
+        href={languageLinks.es}
         lang="es"
         aria-current={language === 'es' ? 'page' : undefined}
         data-sveltekit-reload>ES</a
@@ -34,10 +36,11 @@
 
   .header-content {
     display: flex;
-    min-height: 5rem;
+    height: 70px;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding-block: 8px;
   }
 
   .brand {
@@ -45,8 +48,8 @@
   }
 
   img {
-    width: 8.5rem;
-    height: auto;
+    width: auto;
+    max-height: 54px;
   }
 
   nav {
@@ -66,14 +69,4 @@
     text-decoration: none;
   }
 
-  @media (min-width: 48rem) {
-    .header-content {
-      min-height: 6rem;
-    }
-
-    img {
-      width: 10.5rem;
-    }
-  }
 </style>
-
