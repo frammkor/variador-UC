@@ -72,7 +72,7 @@
   .content {
     max-width: 48rem;
     margin-bottom: 2.5rem;
-    color: var(--color-muted);
+    color: var(--color-body);
     font-size: 1.0625rem;
     line-height: 1.7;
   }

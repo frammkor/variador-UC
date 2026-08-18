@@ -65,7 +65,7 @@
   .supporting {
     max-width: 38rem;
     margin-bottom: 0;
-    color: var(--color-muted);
+    color: var(--color-body);
     line-height: 1.65;
   }
 
@@ -76,4 +76,3 @@
     }
   }
 </style>
-

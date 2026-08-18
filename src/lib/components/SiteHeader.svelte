@@ -69,4 +69,15 @@
     text-decoration: none;
   }
 
+  @media (min-width: 48rem) {
+    .header-content {
+      height: 96px;
+      padding-block: 12px;
+    }
+
+    img {
+      max-height: 72px;
+    }
+  }
+
 </style>

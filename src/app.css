@@ -4,7 +4,9 @@
   --color-primary-900: #1a0622;
   --color-background: #ffffff;
   --color-surface: #f8f5f9;
-  --color-text: #1a0622;
+  --color-heading: #374151;
+  --color-text: #000000;
+  --color-body: #000000;
   --color-muted: #665d69;
   --color-border: #ded6e1;
   --content-width: 72rem;
@@ -63,6 +65,12 @@ button {
 
 h1,
 h2,
+h3 {
+  color: var(--color-heading);
+}
+
+h1,
+h2,
 h3,
 p {
   margin-top: 0;
@@ -96,7 +104,7 @@ p {
 .section-intro {
   max-width: 42rem;
   margin-bottom: 2rem;
-  color: var(--color-muted);
+  color: var(--color-body);
   font-size: 1.0625rem;
   line-height: 1.65;
 }

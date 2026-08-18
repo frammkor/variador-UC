@@ -2,7 +2,7 @@
   let { copy } = $props();
 </script>
 
-<section class="section" id="taxi-dancers">
+<section class="section service" id="taxi-dancers">
   <div class="container content">
     <p class="eyebrow">{copy.eyebrow}</p>
     <h2 class="section-title">{copy.title}</h2>
@@ -12,6 +12,20 @@
 </section>
 
 <style>
+  .service {
+    color: #ffffff;
+    background: var(--color-primary);
+  }
+
+  .service :global(.eyebrow) {
+    color: var(--color-primary-200);
+  }
+
+  .service :global(.section-title),
+  .service :global(.section-intro) {
+    color: #ffffff;
+  }
+
   .content {
     display: grid;
     justify-items: start;
@@ -21,9 +35,8 @@
     padding: 0.8rem 1.1rem;
     border: 1px solid var(--color-border);
     border-radius: 999px;
-    color: var(--color-muted);
-    background: var(--color-surface);
+    color: var(--color-primary-900);
+    background: #ffffff;
     cursor: not-allowed;
   }
 </style>
-
