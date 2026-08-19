@@ -20,7 +20,17 @@ export const translations = {
         nextStep: 'Show the next step',
         tapHint: 'Tap to continue',
         progressLabel: 'Preview steps',
-        steps: ['Select your milonga', 'Pick an available dancer', 'Reservation created']
+        steps: ['Select your milonga', 'Pick an available dancer', 'Reservation created'],
+        eventType: 'Milonga',
+        viewProfile: 'View profile',
+        age: 'Age',
+        reviews: 'Reviews',
+        candidatesPending: 'More candidates may still apply…',
+        continue: 'Continue',
+        continueWith: 'Continue with Tito',
+        successLead: 'Your tango night is taking shape.',
+        successNote: 'We’ll send the details when everything is confirmed.',
+        withDancer: 'with Tito'
       }
     },
     taxiDancer: {
@@ -117,7 +127,17 @@ export const translations = {
         nextStep: 'Mostrar el siguiente paso',
         tapHint: 'Tocá para continuar',
         progressLabel: 'Pasos de la demostración',
-        steps: ['Elegí tu milonga', 'Elegí un bailarín disponible', 'Reserva creada']
+        steps: ['Elegí tu milonga', 'Elegí un bailarín disponible', 'Reserva creada'],
+        eventType: 'Milonga',
+        viewProfile: 'Ver perfil',
+        age: 'Edad',
+        reviews: 'Reseñas',
+        candidatesPending: 'Todavía pueden sumarse más candidatos…',
+        continue: 'Continuar',
+        continueWith: 'Continuar con Tito',
+        successLead: 'Tu noche de tango está tomando forma.',
+        successNote: 'Te enviaremos los detalles cuando todo esté confirmado.',
+        withDancer: 'con Tito'
       }
     },
     taxiDancer: {
