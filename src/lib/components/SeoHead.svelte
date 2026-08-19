@@ -26,7 +26,10 @@
           '@type': 'Person',
           name: 'Franco Cespi'
         },
-        sameAs: ['https://www.instagram.com/dandydancers/']
+        sameAs: [
+          'https://www.instagram.com/dandydancers/',
+          'https://wa.me/5491155284015'
+        ]
       },
       {
         '@type': 'WebSite',

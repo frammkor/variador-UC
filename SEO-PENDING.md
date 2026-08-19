@@ -2,7 +2,7 @@
 
 Update the website metadata, structured data, `llms.txt`, and `llms-full.txt` when these become available:
 
-- Public WhatsApp number and phone number.
+- Public phone number for voice calls.
 - Customer email-interest signup page or form URL and its privacy/consent wording.
 - Launch date and live booking URL.
 - Verified dancer profiles and details of the dancer-screening process.

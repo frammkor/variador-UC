@@ -1,7 +1,10 @@
 export const translations = {
   en: {
     navigation: {
-      languageSelector: 'Language selector'
+      languageSelector: 'Language selector',
+      socialLinks: 'Social media and contact links',
+      comingSoon: 'Coming soon',
+      whatsappMessage: 'Hi, I am interested in the taxidancer service.'
     },
     metaTitle: 'Tango Dance Partners in Buenos Aires | Dandy Dancers',
     metaDescription:
@@ -87,12 +90,18 @@ export const translations = {
     },
     footer: {
       phrase: 'More than a dance—a shared moment.',
-      status: 'Under construction'
+      status: 'Under construction',
+      socialLinks: 'Social media and contact links',
+      comingSoon: 'Coming soon',
+      whatsappMessage: 'Hi, I am interested in the taxidancer service.'
     }
   },
   es: {
     navigation: {
-      languageSelector: 'Selector de idioma'
+      languageSelector: 'Selector de idioma',
+      socialLinks: 'Redes sociales y enlaces de contacto',
+      comingSoon: 'Próximamente',
+      whatsappMessage: 'Hola, me interesa el servicio de taxi dancers.'
     },
     metaTitle: 'Bailarines de Tango en Buenos Aires | Dandy Dancers',
     metaDescription:
@@ -178,7 +187,10 @@ export const translations = {
     },
     footer: {
       phrase: 'Más que un baile: un momento compartido.',
-      status: 'Sitio en construcción'
+      status: 'Sitio en construcción',
+      socialLinks: 'Redes sociales y enlaces de contacto',
+      comingSoon: 'Próximamente',
+      whatsappMessage: 'Hola, me interesa el servicio de taxi dancers.'
     }
   }
 };

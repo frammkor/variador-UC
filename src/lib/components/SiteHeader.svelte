@@ -1,5 +1,6 @@
 <script>
   import { asset } from '$app/paths';
+  import SocialLinks from '$lib/components/SocialLinks.svelte';
 
   let { language, copy, homeHref, languageLinks } = $props();
 </script>
@@ -10,21 +11,30 @@
       <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
     </a>
 
-    <nav aria-label={copy.languageSelector}>
-      <a
-        href={languageLinks.en}
-        lang="en"
-        aria-current={language === 'en' ? 'page' : undefined}
-        data-sveltekit-reload>EN</a
-      >
-      <span aria-hidden="true">/</span>
-      <a
-        href={languageLinks.es}
-        lang="es"
-        aria-current={language === 'es' ? 'page' : undefined}
-        data-sveltekit-reload>ES</a
-      >
-    </nav>
+    <div class="header-actions">
+      <SocialLinks
+        compact
+        ariaLabel={copy.socialLinks}
+        comingSoonLabel={copy.comingSoon}
+        whatsappMessage={copy.whatsappMessage}
+      />
+
+      <nav class="language-nav" aria-label={copy.languageSelector}>
+        <a
+          href={languageLinks.en}
+          lang="en"
+          aria-current={language === 'en' ? 'page' : undefined}
+          data-sveltekit-reload>EN</a
+        >
+        <span aria-hidden="true">/</span>
+        <a
+          href={languageLinks.es}
+          lang="es"
+          aria-current={language === 'es' ? 'page' : undefined}
+          data-sveltekit-reload>ES</a
+        >
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -52,7 +62,13 @@
     max-height: 54px;
   }
 
-  nav {
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .language-nav {
     display: flex;
     gap: 0.5rem;
     font-size: 0.8125rem;
@@ -60,11 +76,11 @@
     letter-spacing: 0.06em;
   }
 
-  nav a {
+  .language-nav a {
     text-underline-offset: 0.25em;
   }
 
-  nav a:not([aria-current='page']) {
+  .language-nav a:not([aria-current='page']) {
     color: #bdb6c0;
     text-decoration: none;
   }

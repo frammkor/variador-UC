@@ -1,10 +1,17 @@
 <script>
+  import SocialLinks from '$lib/components/SocialLinks.svelte';
+
   let { copy } = $props();
 </script>
 
 <footer>
   <div class="container">
     <p class="phrase">{copy.phrase}</p>
+    <SocialLinks
+      ariaLabel={copy.socialLinks}
+      comingSoonLabel={copy.comingSoon}
+      whatsappMessage={copy.whatsappMessage}
+    />
     <p class="name">Dandy Dancers · {copy.status}</p>
   </div>
 </footer>
@@ -24,9 +31,12 @@
   }
 
   .name {
-    margin: 0;
+    margin: 1.5rem 0 0;
     color: #c9becd;
     font-size: 0.75rem;
   }
-</style>
 
+  footer :global(nav) {
+    color: #ffffff;
+  }
+</style>
