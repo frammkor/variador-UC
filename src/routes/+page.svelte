@@ -1,5 +1,10 @@
 <svelte:head>
   <title>Dandy Dancers</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://dandydancers.com/en/" />
+  <link rel="alternate" hreflang="en" href="https://dandydancers.com/en/" />
+  <link rel="alternate" hreflang="es" href="https://dandydancers.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://dandydancers.com/en/" />
   <meta http-equiv="refresh" content="0; url=./en/" />
 </svelte:head>
 
@@ -22,4 +27,3 @@
     margin: 0;
   }
 </style>
-

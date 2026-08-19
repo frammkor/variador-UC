@@ -2,6 +2,7 @@
   import { getTranslations } from '$lib/i18n/index.js';
   import AboutSection from '$lib/components/AboutSection.svelte';
   import HeroSection from '$lib/components/HeroSection.svelte';
+  import SeoHead from '$lib/components/SeoHead.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
   import TaxiDancerSection from '$lib/components/TaxiDancerSection.svelte';
@@ -11,10 +12,7 @@
   const copy = $derived(getTranslations(language));
 </script>
 
-<svelte:head>
-  <title>{copy.metaTitle}</title>
-  <meta name="description" content={copy.metaDescription} />
-</svelte:head>
+<SeoHead language={language} title={copy.metaTitle} description={copy.metaDescription} />
 
 <SiteHeader
   {language}
@@ -24,7 +22,7 @@
 />
 <main>
   <HeroSection copy={copy.hero} />
-  <TaxiDancerSection copy={copy.taxiDancer} />
+  <TaxiDancerSection copy={copy.taxiDancer} registrationHref="./taxi-dancer-registration/" />
   <WhySection copy={copy.why} />
   <AboutSection copy={copy.about} />
 </main>

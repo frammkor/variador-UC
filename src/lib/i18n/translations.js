@@ -3,8 +3,9 @@ export const translations = {
     navigation: {
       languageSelector: 'Language selector'
     },
-    metaTitle: 'Dandy Dancers — Tango dancers in Buenos Aires',
-    metaDescription: 'Find professional tango dancers in Buenos Aires with Dandy Dancers.',
+    metaTitle: 'Tango Dance Partners in Buenos Aires | Dandy Dancers',
+    metaDescription:
+      'Book a professional tango dance partner for milongas, lessons, and practice in Buenos Aires. A welcoming local tango experience for adult travelers.',
     hero: {
       status: 'Under construction',
       title: 'Your Best Tandas Await',
@@ -24,7 +25,8 @@ export const translations = {
       title: 'What is a taxi dancer?',
       description:
         'A taxi dancer is a professional dancer you can book to share a milonga, class, or practice. Beyond dancing, they can help you feel comfortable in the local scene, understand its customs, and make the most of your time on the dance floor.',
-      cta: 'Meet the dancers — coming soon'
+      cta: 'Meet the dancers — coming soon',
+      registrationCta: 'I want to be a Dandy'
     },
     why: {
       eyebrow: 'Why Dandy Dancers',
@@ -92,8 +94,9 @@ export const translations = {
     navigation: {
       languageSelector: 'Selector de idioma'
     },
-    metaTitle: 'Dandy Dancers — Bailarines de tango en Buenos Aires',
-    metaDescription: 'Encontrá bailarines profesionales de tango en Buenos Aires con Dandy Dancers.',
+    metaTitle: 'Bailarines de Tango en Buenos Aires | Dandy Dancers',
+    metaDescription:
+      'Reservá un bailarín profesional de tango para milongas, clases y prácticas en Buenos Aires. Una experiencia local para viajeros adultos.',
     hero: {
       status: 'Sitio en construcción',
       title: 'Tus mejores tandas te esperan',
@@ -113,7 +116,8 @@ export const translations = {
       title: '¿Qué es un taxi dancer?',
       description:
         'Un taxi dancer es un bailarín profesional que podés contratar para compartir una milonga, una clase o una práctica. Además de bailar, puede ayudarte a sentirte cómodo en la escena local, comprender sus códigos y aprovechar al máximo tu tiempo en la pista.',
-      cta: 'Conocé a los bailarines — próximamente'
+      cta: 'Conocé a los bailarines — próximamente',
+      registrationCta: 'Quiero ser un Dandy'
     },
     why: {
       eyebrow: 'Por qué Dandy Dancers',
@@ -166,8 +170,8 @@ export const translations = {
       metaTitle: 'Registrate como Taxi Dancer — Dandy Dancers',
       metaDescription: 'Postulate para formar parte del plantel de Taxi Dancers de Dandy Dancers.',
       paragraphs: [
-        'Queremos conocerte y evaluar tu perfil para incorporarte al plantel de Taxi Dancers. Completar el formulario te demora aproximadamente 10 minutos.',
-        'En caso de ser seleccionado, nos pondremos en contacto con vos en las próximas semanas.'
+        'Queremos conocerte y evaluar tu perfil para incorporarte al plantel de Taxi Dancers. Completar el formulario te toma aproximadamente 10 minutos.',
+        'En caso de ser seleccionado, nos pondremos en contacto con vos.'
       ],
       cta: 'Quiero sumarme',
       formPending: 'El enlace al formulario de inscripción todavía no está configurado.'
