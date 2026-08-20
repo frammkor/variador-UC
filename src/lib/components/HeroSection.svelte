@@ -21,7 +21,7 @@
 <style>
   .hero {
     padding-block: clamp(3rem, 8vw, 6rem);
-    overflow: hidden;
+    overflow-x: clip;
     background: linear-gradient(180deg, var(--color-primary-200) 0%, #ffffff 80%);
   }
 

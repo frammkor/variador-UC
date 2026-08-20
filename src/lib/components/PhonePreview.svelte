@@ -6,11 +6,56 @@
     { name: 'Tito', age: 28, rating: '85%', price: '30', image: '/images/td-ia-04.png' },
     { name: 'Edu', age: 41, rating: '97%', price: '35', image: '/images/td-ia-05.png' }
   ];
-  function nextStep() { activeStep = (activeStep + 1) % copy.steps.length; }
+  let pointerStartX = 0;
+  let ignoreNextClick = false;
+
+  function nextStep() {
+    activeStep = Math.min(activeStep + 1, copy.steps.length - 1);
+  }
+
+  function previousStep() {
+    activeStep = Math.max(activeStep - 1, 0);
+  }
+
+  /** @param {PointerEvent} event */
+  function handlePointerDown(event) {
+    pointerStartX = event.clientX;
+    ignoreNextClick = false;
+    const phone = /** @type {HTMLButtonElement} */ (event.currentTarget);
+    phone.setPointerCapture(event.pointerId);
+  }
+
+  /** @param {PointerEvent} event */
+  function handlePointerUp(event) {
+    const distance = event.clientX - pointerStartX;
+    const phone = /** @type {HTMLButtonElement} */ (event.currentTarget);
+    phone.releasePointerCapture(event.pointerId);
+    if (Math.abs(distance) < 35) return;
+
+    ignoreNextClick = true;
+    if (distance < 0) nextStep();
+    else previousStep();
+  }
+
+  function handleClick() {
+    if (ignoreNextClick) {
+      ignoreNextClick = false;
+      return;
+    }
+    nextStep();
+  }
 </script>
 
 <div class="preview">
-  <button class="phone" type="button" onclick={nextStep} aria-label={copy.nextStep}>
+  <button
+    class="phone"
+    type="button"
+    onclick={handleClick}
+    onpointerdown={handlePointerDown}
+    onpointerup={handlePointerUp}
+    onpointercancel={() => (ignoreNextClick = false)}
+    aria-label={copy.nextStep}
+  >
     <span class="speaker" aria-hidden="true"></span>
     <span class="screen">
       {#if activeStep === 0}
@@ -33,7 +78,7 @@
         <span class="dancer-list">
           {#each dancers as dancer, index}
             <span class="dancer-row">
-              <span class="avatar"><img src={dancer.image} alt="" /></span>
+              <span class="avatar"><img src={dancer.image} alt="" draggable="false" /></span>
               <span class="dancer-name"><strong>{dancer.name}</strong><small>{copy.viewProfile}</small></span>
               <span class="dancer-stats"><strong>${dancer.price}/hr</strong><small>{copy.age} {dancer.age}</small><small>{copy.reviews} {dancer.rating}</small></span>
               <span class:selected={index === 1} class="check">{index === 1 ? '✓' : ''}</span>
@@ -62,7 +107,8 @@
 <style>
   .preview { display: grid; justify-items: center; }
   .label { margin: .75rem 0 0; color: var(--color-muted); font-size: .6875rem; }
-  .phone { position: relative; width: min(76vw, 18.25rem); aspect-ratio: 280 / 540; padding: 8px; overflow: hidden; border: 0; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; font: inherit; text-align: left; }
+  .phone { position: relative; display: block; width: min(76vw, 18.25rem); aspect-ratio: 280 / 540; padding: 8px; overflow: hidden; border: 0; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: grab; font: inherit; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .phone:active { cursor: grabbing; }
   .phone:focus-visible { outline: 3px solid var(--color-primary); outline-offset: .35rem; }
   .speaker { position: absolute; z-index: 2; top: 17px; left: 50%; width: 4.8rem; height: .55rem; border-radius: 999px; background: #1b1b1b; transform: translateX(-50%); }
   .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 2.65rem .85rem 1.5rem; border-radius: 2.18rem; background: #fff; }
@@ -89,7 +135,7 @@
   .dancer-list { display: flex; margin-inline: -.85rem; flex-direction: column; border-top: 1px dashed #e9d5ff; }
   .dancer-row { display: grid; grid-template-columns: 2.25rem 1fr auto 1rem; gap: .55rem; align-items: center; padding: .65rem .85rem; border-bottom: 1px solid #f5f5f4; }
   .avatar { display: block; width: 2.25rem; height: 2.25rem; overflow: hidden; border: 1px solid #d6d3d1; border-radius: 50%; background: #f5f3ff; }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
   .dancer-name, .dancer-stats { display: flex; flex-direction: column; }
   .dancer-name strong { font-size: .76rem; }
   .dancer-name small { margin-top: .18rem; color: #7f22fe; font-size: .52rem; text-decoration: underline; }
