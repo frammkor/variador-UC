@@ -36,16 +36,9 @@
       {/each}
     </div>
 
-    {#if taxiDancerFormUrl}
-      <a class="cta" href={taxiDancerFormUrl} target="_blank" rel="noreferrer">
-        {copy.registration.cta}
-      </a>
-    {:else}
-      <button class="cta" type="button" disabled title={copy.registration.formPending}>
-        {copy.registration.cta}
-      </button>
-      <p class="form-pending">{copy.registration.formPending}</p>
-    {/if}
+    <a class="cta" href={taxiDancerFormUrl} target="_blank" rel="noreferrer">
+      {copy.registration.cta}
+    </a>
   </article>
 </main>
 
@@ -95,16 +88,4 @@
     text-decoration: none;
   }
 
-  button.cta:disabled {
-    border-color: var(--color-border);
-    color: var(--color-muted);
-    background: var(--color-surface);
-    cursor: not-allowed;
-  }
-
-  .form-pending {
-    margin-top: 0.75rem;
-    color: var(--color-muted);
-    font-size: 0.75rem;
-  }
 </style>

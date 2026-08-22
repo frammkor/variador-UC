@@ -24,7 +24,7 @@
           allowBotProcessing: 'true',
           slug: 'dandydancers',
           label: {
-            text: 'Hi! 👋 Dandy Dancers is launching soon. Please tell us when you expect to be in Buenos Aires or when you’ll need a tango dancer.',
+            text: 'Hi! 👋 Tell us when you expect to be in Buenos Aires or when you’ll need a tango dancer.',
             mode: 'notification',
             delay: 3,
             duration: 30,

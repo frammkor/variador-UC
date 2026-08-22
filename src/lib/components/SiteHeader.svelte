@@ -15,7 +15,6 @@
       <SocialLinks
         compact
         ariaLabel={copy.socialLinks}
-        comingSoonLabel={copy.comingSoon}
         whatsappMessage={copy.whatsappMessage}
       />
 
@@ -41,7 +40,7 @@
 <style>
   header {
     color: #ffffff;
-    background: #000000;
+    background: var(--color-header);
   }
 
   .header-content {

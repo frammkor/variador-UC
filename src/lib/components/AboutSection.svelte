@@ -10,7 +10,6 @@
     </div>
     <div class="copy">
       <p>{copy.description}</p>
-      <p class="note">{copy.note}</p>
     </div>
   </div>
 </section>
@@ -26,11 +25,6 @@
     color: var(--color-body);
     font-size: 1.0625rem;
     line-height: 1.65;
-  }
-
-  .note {
-    color: var(--color-primary);
-    font-size: 0.875rem;
   }
 
   @media (min-width: 48rem) {

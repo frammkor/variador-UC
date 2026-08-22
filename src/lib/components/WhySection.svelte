@@ -1,19 +1,5 @@
 <script>
   let { copy } = $props();
-  let openItems = $state(new Set([0]));
-
-  /** @param {number} index */
-  function toggleItem(index) {
-    const nextOpenItems = new Set(openItems);
-
-    if (nextOpenItems.has(index)) {
-      nextOpenItems.delete(index);
-    } else {
-      nextOpenItems.add(index);
-    }
-
-    openItems = nextOpenItems;
-  }
 </script>
 
 <section class="section why" id="why">
@@ -23,32 +9,10 @@
     <p class="section-intro">{copy.intro}</p>
 
     <div class="issues">
-      {#each copy.items as item, index}
+      {#each copy.items as item}
         <section class="issue">
-          <h3>
-            <button
-              type="button"
-              aria-expanded={openItems.has(index)}
-              aria-controls={`reason-${index}`}
-              onclick={() => toggleItem(index)}
-            >
-            <span>{item.title}</span>
-            <svg class:open={openItems.has(index)} class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-            </button>
-          </h3>
-
-          <div
-            class:open={openItems.has(index)}
-            class="answer"
-            id={`reason-${index}`}
-            aria-hidden={!openItems.has(index)}
-          >
-            <div class="answer-content">
-              <p>{item.description}</p>
-            </div>
-          </div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
         </section>
       {/each}
     </div>
@@ -57,91 +21,73 @@
 
 <style>
   .why {
-    background: var(--color-surface);
+    position: relative;
+    isolation: isolate;
+    color: var(--color-text);
+    background: var(--color-background);
+  }
+
+  .why::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: var(--color-primary-50);
+    content: '';
+    mask-image: url("data:image/svg+xml,%3Csvg width='80' height='88' viewBox='0 0 80 88' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 21.91V26h-2c-9.94 0-18 8.06-18 18 0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73 3.212-6.99 9.983-12.008 18-12.73V62h2c9.94 0 18-8.06 18-18 0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73-3.212 6.99-9.983 12.008-18 12.73zM54 58v4.696c-5.574 1.316-10.455 4.428-14 8.69-3.545-4.262-8.426-7.374-14-8.69V58h-5.993C12.27 58 6 51.734 6 44c0-7.732 6.275-14 14.007-14H26v-4.696c5.574-1.316 10.455-4.428 14-8.69 3.545 4.262 8.426 7.374 14 8.69V30h5.993C67.73 30 74 36.266 74 44c0 7.732-6.275 14-14.007 14H54zM42 88c0-9.94 8.06-18 18-18h2v-4.09c8.016-.722 14.787-5.738 18-12.73v7.434c-3.545 4.262-8.426 7.374-14 8.69V74h-5.993C52.275 74 46 80.268 46 88h-4zm-4 0c0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73v7.434c3.545 4.262 8.426 7.374 14 8.69V74h5.993C27.73 74 34 80.266 34 88h4zm4-88c0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73v-7.434c-3.545-4.262-8.426-7.374-14-8.69V14h-5.993C52.27 14 46 7.734 46 0h-4zM0 34.82c3.213-6.992 9.984-12.008 18-12.73V18h2c9.94 0 18-8.06 18-18h-4c0 7.732-6.275 14-14.007 14H14v4.696c-5.574 1.316-10.455 4.428-14 8.69v7.433z' fill='%23000' fill-rule='evenodd'/%3E%3C/svg%3E");
+    mask-repeat: repeat;
+  }
+
+  .why :global(.eyebrow) {
+    color: var(--color-primary);
+  }
+
+  .why :global(.section-title),
+  .why :global(.section-intro) {
+    color: var(--color-text);
   }
 
   .issues {
     display: grid;
-    gap: 0.75rem;
-    max-width: 52rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .issue {
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
-    background: var(--color-background);
+    display: flex;
+    min-height: 10rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid var(--color-primary-200);
+    border-radius: 1rem;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 0.5rem 1.5rem rgba(26, 6, 34, 0.04);
   }
 
   h3 {
     margin: 0;
+    color: var(--color-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
-  h3 button {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem;
-    border: 0;
-    border-radius: 0.75rem;
-    background: transparent;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  h3 button:focus-visible {
-    outline: 3px solid var(--color-primary-200);
-    outline-offset: 2px;
-  }
-
-  .chevron {
-    width: 1.25rem;
-    height: 1.25rem;
-    flex: 0 0 auto;
-    color: var(--color-primary);
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2;
-    transition: transform 150ms ease;
-  }
-
-  .chevron.open {
-    transform: rotate(180deg);
-  }
-
-  .answer {
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    transition:
-      grid-template-rows 250ms ease,
-      opacity 180ms ease;
-  }
-
-  .answer.open {
-    grid-template-rows: 1fr;
-    opacity: 1;
-  }
-
-  .answer-content {
-    overflow: hidden;
-  }
-
-  .answer p {
+  .issue p {
     margin: 0;
-    padding: 0 1.25rem 1.25rem;
-    color: var(--color-body);
-    line-height: 1.65;
+    font-size: 0.875rem;
+    line-height: 1.2rem;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .answer,
-    .chevron {
-      transition: none;
+  @media (min-width: 48rem) {
+    .issues {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .issues {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>

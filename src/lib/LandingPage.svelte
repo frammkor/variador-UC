@@ -21,8 +21,8 @@
   languageLinks={{ en: '../en/', es: '../es/' }}
 />
 <main>
-  <HeroSection copy={copy.hero} />
-  <TaxiDancerSection copy={copy.taxiDancer} registrationHref="./taxi-dancer-registration/" />
+  <HeroSection copy={copy.hero} registrationHref="./taxi-dancer-registration/" />
+  <TaxiDancerSection copy={copy.taxiDancer} />
   <WhySection copy={copy.why} />
   <AboutSection copy={copy.about} />
 </main>

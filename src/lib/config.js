@@ -1,4 +1,5 @@
 export const taxiDancerFormUrl = 'https://forms.gle/ncntzuV8LCTGvn8z6';
+export const whatsappUrl = 'https://wa.me/5491155284015';
 
 // Removing an entry hides it everywhere.
 export const socialLinks = [
@@ -16,7 +17,7 @@ export const socialLinks = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    href: 'https://wa.me/5491155284015',
+    href: whatsappUrl,
     external: true
   }
 ];

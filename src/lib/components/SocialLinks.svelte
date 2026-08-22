@@ -1,14 +1,10 @@
 <script>
   import { socialLinks } from '$lib/config.js';
 
-  let { ariaLabel, comingSoonLabel, whatsappMessage, compact = false } = $props();
+  let { ariaLabel, whatsappMessage, compact = false } = $props();
 
   /** @param {(typeof socialLinks)[number]} social */
   function getHref(social) {
-    if (!social.href) {
-      return '';
-    }
-
     if (social.id !== 'whatsapp' || !whatsappMessage) {
       return social.href;
     }
@@ -21,50 +17,33 @@
 {#if socialLinks.length > 0}
   <nav class:compact aria-label={ariaLabel}>
     {#each socialLinks as social (social.id)}
-      {#if social.href}
-        {@const href = getHref(social)}
-        <a
-          class="social-item"
-          {href}
-          aria-label={social.label}
-          title={social.label}
-          target={social.external ? '_blank' : undefined}
-          rel={social.external ? 'noreferrer' : undefined}
-        >
-          {#if social.id === 'instagram'}
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle class="fill" cx="17.5" cy="6.5" r="1"></circle>
-            </svg>
-          {:else if social.id === 'email'}
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-              <path d="m4 7 8 6 8-6"></path>
-            </svg>
-          {:else if social.id === 'whatsapp'}
-            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12.04 2a9.84 9.84 0 0 0-8.45 14.9L2 22l5.25-1.55A9.96 9.96 0 1 0 12.04 2Zm5.81 13.93c-.25.7-1.47 1.34-2.03 1.42-.52.08-1.18.11-1.9-.12-.44-.14-1-.32-1.72-.63-3.03-1.31-5-4.35-5.15-4.55-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.61-.38.82-.38h.59c.19.01.44-.07.69.53.25.6.85 2.08.93 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.61.18.3.77 1.28 1.67 1.81 1.16.7 2.13.92 2.43 1.02.3.1.47.08.65-.12.17-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"></path>
-            </svg>
-          {/if}
-          <span class="label">{social.label}</span>
-        </a>
-      {:else}
-        <span
-          class="social-item unavailable"
-          aria-label={`${social.label} — ${comingSoonLabel}`}
-          aria-disabled="true"
-          title={`${social.label} — ${comingSoonLabel}`}
-        >
-          {#if social.id === 'whatsapp'}
-            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12.04 2a9.84 9.84 0 0 0-8.45 14.9L2 22l5.25-1.55A9.96 9.96 0 1 0 12.04 2Zm5.81 13.93c-.25.7-1.47 1.34-2.03 1.42-.52.08-1.18.11-1.9-.12-.44-.14-1-.32-1.72-.63-3.03-1.31-5-4.35-5.15-4.55-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.61-.38.82-.38h.59c.19.01.44-.07.69.53.25.6.85 2.08.93 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.61.18.3.77 1.28 1.67 1.81 1.16.7 2.13.92 2.43 1.02.3.1.47.08.65-.12.17-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"></path>
-            </svg>
-          {/if}
-          <span class="label">{social.label}</span>
-          <span class="soon">{comingSoonLabel}</span>
-        </span>
-      {/if}
+      {@const href = getHref(social)}
+      <a
+        class="social-item"
+        {href}
+        aria-label={social.label}
+        title={social.label}
+        target={social.external ? '_blank' : undefined}
+        rel={social.external ? 'noreferrer' : undefined}
+      >
+        {#if social.id === 'instagram'}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle class="fill" cx="17.5" cy="6.5" r="1"></circle>
+          </svg>
+        {:else if social.id === 'email'}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+        {:else if social.id === 'whatsapp'}
+          <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.04 2a9.84 9.84 0 0 0-8.45 14.9L2 22l5.25-1.55A9.96 9.96 0 1 0 12.04 2Zm5.81 13.93c-.25.7-1.47 1.34-2.03 1.42-.52.08-1.18.11-1.9-.12-.44-.14-1-.32-1.72-.63-3.03-1.31-5-4.35-5.15-4.55-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.61-.38.82-.38h.59c.19.01.44-.07.69.53.25.6.85 2.08.93 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.61.18.3.77 1.28 1.67 1.81 1.16.7 2.13.92 2.43 1.02.3.1.47.08.65-.12.17-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"></path>
+          </svg>
+        {/if}
+        <span class="label">{social.label}</span>
+      </a>
     {/each}
   </nav>
 {/if}
@@ -120,18 +99,6 @@
     stroke: none;
   }
 
-  .unavailable {
-    opacity: 0.48;
-    cursor: not-allowed;
-  }
-
-  .soon {
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
   nav.compact {
     flex-wrap: nowrap;
     gap: 0.2rem;
@@ -143,8 +110,7 @@
     justify-content: center;
   }
 
-  .compact .label,
-  .compact .soon {
+  .compact .label {
     position: absolute;
     width: 1px;
     height: 1px;

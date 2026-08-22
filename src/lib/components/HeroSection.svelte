@@ -1,17 +1,20 @@
 <script>
+  import { whatsappUrl } from '$lib/config.js';
   import PhonePreview from './PhonePreview.svelte';
 
-  let { copy } = $props();
+  let { copy, registrationHref } = $props();
+  const whatsappHref = $derived(`${whatsappUrl}?text=${encodeURIComponent(copy.whatsappMessage)}`);
 </script>
 
 <section class="hero">
   <div class="container hero-layout">
     <div class="hero-copy">
-      <p class="status">{copy.status}</p>
-      <p class="eyebrow">Dandy Dancers</p>
       <h1>{copy.title}</h1>
-      <p class="lead">{copy.subtitle}</p>
       <p class="supporting">{copy.supporting}</p>
+      <div class="actions">
+        <a class="primary-cta" href={whatsappHref} target="_blank" rel="noreferrer">{copy.cta}</a>
+        <a class="registration-link" href={registrationHref}>{copy.registrationCta}</a>
+      </div>
     </div>
 
     <PhonePreview copy={copy.preview} />
@@ -35,18 +38,6 @@
     max-width: 42rem;
   }
 
-  .status {
-    display: inline-block;
-    margin-bottom: 2rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
-    border-radius: 999px;
-    color: var(--color-primary-900);
-    background: color-mix(in srgb, #ffffff 55%, transparent);
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-
   h1 {
     max-width: 12ch;
     margin-bottom: 1.25rem;
@@ -55,18 +46,38 @@
     letter-spacing: -0.055em;
   }
 
-  .lead {
-    max-width: 30rem;
-    margin-bottom: 1rem;
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
-    line-height: 1.3;
-  }
-
   .supporting {
     max-width: 38rem;
-    margin-bottom: 0;
+    margin-bottom: 1.75rem;
     color: var(--color-body);
     line-height: 1.65;
+  }
+
+  .actions {
+    display: grid;
+    justify-items: start;
+    gap: 0.75rem;
+  }
+
+  .primary-cta {
+    display: inline-flex;
+    min-height: 3rem;
+    padding: 0.8rem 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+    border-radius: 999px;
+    color: #ffffff;
+    background: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .registration-link {
+    color: var(--color-primary-900);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
   }
 
   @media (min-width: 55rem) {

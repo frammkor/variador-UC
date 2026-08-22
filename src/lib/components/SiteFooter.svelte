@@ -9,10 +9,9 @@
     <p class="phrase">{copy.phrase}</p>
     <SocialLinks
       ariaLabel={copy.socialLinks}
-      comingSoonLabel={copy.comingSoon}
       whatsappMessage={copy.whatsappMessage}
     />
-    <p class="name">Dandy Dancers · {copy.status}</p>
+    <p class="name">Dandy Dancers</p>
   </div>
 </footer>
 
