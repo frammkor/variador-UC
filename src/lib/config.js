@@ -1,6 +1,6 @@
 export const taxiDancerFormUrl = 'https://forms.gle/ncntzuV8LCTGvn8z6';
 export const whatsappUrl = 'https://wa.me/5491155284015';
-export const taxiDancerInquiryMessage = 'Estoy interesado en el servicio de taxidancers.';
+export const taxiDancerInquiryMessage = 'Estoy interesado en el servicio de taxi dancers.';
 
 /** @param {string} message */
 export function getWhatsAppHref(message) {

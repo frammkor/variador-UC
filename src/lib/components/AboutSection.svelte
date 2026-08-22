@@ -17,7 +17,13 @@
 <style>
   .about-layout {
     display: grid;
+    justify-items: center;
     gap: 1rem;
+    text-align: center;
+  }
+
+  .about-layout :global(.section-title) {
+    margin-inline: auto;
   }
 
   .copy {
@@ -27,10 +33,7 @@
     line-height: 1.65;
   }
 
-  @media (min-width: 48rem) {
-    .about-layout {
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 4rem;
-    }
+  .copy p {
+    margin-bottom: 0;
   }
 </style>

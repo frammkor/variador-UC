@@ -1,23 +1,19 @@
 <script>
   import { asset } from '$app/paths';
-  import SocialLinks from '$lib/components/SocialLinks.svelte';
 
   let { language, copy, homeHref, languageLinks } = $props();
 </script>
 
 <header>
   <div class="container header-content">
-    <a class="brand" href={homeHref} aria-label="Dandy Dancers">
-      <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
-    </a>
+    <div class="brand-group">
+      <a class="brand" href={homeHref} aria-label="Dandy Dancers">
+        <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
+      </a>
+      <span class="desktop-tagline">{copy.tagline}</span>
+    </div>
 
     <div class="header-actions">
-      <SocialLinks
-        compact
-        ariaLabel={copy.socialLinks}
-        whatsappMessage={copy.whatsappMessage}
-      />
-
       <nav class="language-nav" aria-label={copy.languageSelector}>
         <a
           href={languageLinks.en}
@@ -35,6 +31,7 @@
       </nav>
     </div>
   </div>
+  <div class="mobile-tagline">{copy.tagline}</div>
 </header>
 
 <style>
@@ -45,7 +42,7 @@
 
   .header-content {
     display: flex;
-    height: 70px;
+    height: var(--header-main-height);
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -54,6 +51,28 @@
 
   .brand {
     display: block;
+  }
+
+  .brand-group {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+  }
+
+  .desktop-tagline {
+    display: none;
+  }
+
+  .mobile-tagline {
+    display: grid;
+    height: var(--header-tagline-height);
+    padding-inline: 1rem;
+    place-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    color: #d7d2d9;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    text-align: center;
   }
 
   img {
@@ -86,12 +105,34 @@
 
   @media (min-width: 48rem) {
     .header-content {
-      height: 96px;
       padding-block: 12px;
     }
 
     img {
       max-height: 72px;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .brand-group {
+      gap: 1.25rem;
+    }
+
+    .brand {
+      padding-right: 1.25rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .desktop-tagline {
+      display: inline;
+      max-width: 25rem;
+      color: #d7d2d9;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .mobile-tagline {
+      display: none;
     }
   }
 

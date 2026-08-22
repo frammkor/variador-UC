@@ -46,17 +46,27 @@
 
 <style>
   main {
-    min-height: calc(100vh - 12rem);
-    background: linear-gradient(180deg, var(--color-primary-200) 0%, #ffffff 24rem);
+    display: grid;
+    min-height: calc(100svh - var(--header-main-height) - var(--header-tagline-height));
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-primary-900) 66%, transparent) 0%,
+        color-mix(in srgb, var(--color-primary-900) 46%, transparent) 52%,
+        color-mix(in srgb, var(--color-primary-700) 18%, transparent) 100%
+      ),
+      url('/images/taxis-hero.webp') center / cover no-repeat;
   }
 
   article {
+    align-self: center;
     padding-block: var(--section-space);
   }
 
   h1 {
     max-width: 14ch;
     margin-bottom: 2rem;
+    color: #ffffff;
     font-size: clamp(2.75rem, 10vw, 5.5rem);
     line-height: 0.98;
     letter-spacing: -0.045em;
@@ -65,13 +75,17 @@
   .content {
     max-width: 48rem;
     margin-bottom: 2.5rem;
-    color: var(--color-body);
+    color: rgba(255, 255, 255, 0.92);
     font-size: 1.0625rem;
     line-height: 1.7;
   }
 
   .content p {
     margin-bottom: 1.25rem;
+  }
+
+  article :global(.eyebrow) {
+    color: var(--color-primary-200);
   }
 
   .cta {

@@ -39,11 +39,14 @@
 
   .why :global(.eyebrow) {
     color: var(--color-primary);
+    text-align: center;
   }
 
   .why :global(.section-title),
   .why :global(.section-intro) {
+    margin-inline: auto;
     color: var(--color-text);
+    text-align: center;
   }
 
   .issues {

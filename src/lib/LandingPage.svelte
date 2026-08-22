@@ -5,7 +5,7 @@
   import SeoHead from '$lib/components/SeoHead.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
-  import TaxiDancerSection from '$lib/components/TaxiDancerSection.svelte';
+  import TaxiDancerPreviewSection from '$lib/components/TaxiDancerPreviewSection.svelte';
   import WhySection from '$lib/components/WhySection.svelte';
 
   let { language } = $props();
@@ -21,9 +21,16 @@
   languageLinks={{ en: '../en/', es: '../es/' }}
 />
 <main>
-  <HeroSection copy={copy.hero} registrationHref="./taxi-dancer-registration/" />
-  <TaxiDancerSection copy={copy.taxiDancer} />
+  <HeroSection
+    copy={copy.hero}
+    modalCopy={copy.taxiDancer}
+    registrationHref="./taxi-dancer-registration/"
+  />
   <WhySection copy={copy.why} />
+  <TaxiDancerPreviewSection
+    copy={copy.previewSection}
+    previewCopy={copy.hero.preview}
+  />
   <AboutSection copy={copy.about} />
 </main>
 <SiteFooter copy={copy.footer} />
