@@ -66,7 +66,6 @@
 
   .issue {
     display: flex;
-    min-height: 10rem;
     padding: clamp(1.25rem, 3vw, 1.75rem);
     flex-direction: column;
     gap: 0.75rem;
@@ -109,6 +108,10 @@
   @media (min-width: 48rem) {
     .issues {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .issue {
+      min-height: 10rem;
     }
   }
 

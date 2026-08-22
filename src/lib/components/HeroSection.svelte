@@ -90,7 +90,7 @@
     margin-bottom: 1.75rem;
     margin-inline: auto;
     color: rgba(255, 255, 255, 0.92);
-    line-height: 1.65;
+    line-height: 1.2rem;
   }
 
   .definition-trigger {

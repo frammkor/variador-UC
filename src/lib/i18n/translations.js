@@ -152,13 +152,14 @@ export const translations = {
       comparison: {
         eyebrow: 'A better way to work',
         title: 'Value your embrace',
-        intro: 'Combine the control of working independently with the speed of an organizer.',
-        columns: { solo: 'On your own', organizer: 'With an organizer' },
+        intro: 'Combine the control of working independently with the speed of an intermediary.',
+        swipeHint: 'Swipe to see more',
+        columns: { solo: 'On your own', intermediary: 'With an intermediary' },
         items: [
-          { title: 'Who you dance with', solo: 'You depend on your network.', organizer: 'You depend on others.', dandy: 'You choose.' },
-          { title: 'Your rate', solo: 'You negotiate it.', organizer: 'The organizer sets it.', dandy: 'You set it.' },
-          { title: 'Your time', solo: 'Coordinating everything takes time.', organizer: 'You delegate, but lose control.', dandy: 'See what’s available and sign up in seconds.' },
-          { title: 'Confirming the job', solo: 'Messages and manual follow-up.', organizer: 'Back-and-forth through a third party.', dandy: 'We tell you when and where.' }
+          { title: 'Who you dance with', solo: 'You depend on your network.', intermediary: 'You depend on others.', dandy: 'You choose.' },
+          { title: 'Your rate', solo: 'You negotiate it.', intermediary: 'They set it.', dandy: 'You set it.' },
+          { title: 'Your time', solo: 'Coordinating everything takes time.', intermediary: 'You delegate, but lose control.', dandy: 'See what’s available and sign up in seconds.' },
+          { title: 'Confirming the job', solo: 'Messages and manual follow-up.', intermediary: 'Back-and-forth through a third party.', dandy: 'We tell you when and where.' }
         ],
         cta: 'Join Dandy Dancers'
       }
@@ -322,13 +323,14 @@ export const translations = {
       comparison: {
         eyebrow: 'Otra forma de trabajar',
         title: 'Tu abrazo vale',
-        intro: 'Combiná el control de trabajar por tu cuenta con la agilidad de un organizador.',
-        columns: { solo: 'Por tu cuenta', organizer: 'Con un organizador' },
+        intro: 'Combiná el control de trabajar por tu cuenta con la agilidad de un intermediario.',
+        swipeHint: 'Deslizá para ver más',
+        columns: { solo: 'Por tu cuenta', intermediary: 'Con intermediario' },
         items: [
-          { title: 'Con quién bailás', solo: 'Dependés de tu red.', organizer: 'Dependés de otros.', dandy: 'Vos elegís.' },
-          { title: 'Tu tarifa', solo: 'La negociás.', organizer: 'La define el organizador.', dandy: 'La definís vos.' },
-          { title: 'Tu tiempo', solo: 'Coordinar todo lleva tiempo.', organizer: 'Delegás, pero perdés el control.', dandy: 'Ves qué hay y te anotás en segundos.' },
-          { title: 'Cerrar el trabajo', solo: 'Mensajes y seguimiento manual.', organizer: 'Idas y vueltas con un tercero.', dandy: 'Te avisamos cuándo y dónde.' }
+          { title: 'Con quién bailás', solo: 'Dependés de tu red.', intermediary: 'Dependés de otros.', dandy: 'Vos elegís.' },
+          { title: 'Tu tarifa', solo: 'La negociás.', intermediary: 'La definen.', dandy: 'La definís vos.' },
+          { title: 'Tu tiempo', solo: 'Coordinar todo lleva tiempo.', intermediary: 'Delegás, pero perdés el control.', dandy: 'Ves qué hay y te anotás en segundos.' },
+          { title: 'Cerrar el trabajo', solo: 'Mensajes y seguimiento manual.', intermediary: 'Idas y vueltas con un tercero.', dandy: 'Te avisamos cuándo y dónde.' }
         ],
         cta: 'Sumarme a Dandy Dancers'
       }

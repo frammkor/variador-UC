@@ -140,12 +140,13 @@
 <style>
   .preview { display: grid; justify-items: center; }
   .label { margin: .75rem 0 0; color: var(--color-muted); font-size: .6875rem; }
-  .phone { position: relative; display: block; width: min(76vw, 18.25rem); aspect-ratio: 280 / 540; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .phone { position: relative; display: block; width: min(86vw, 18.25rem); aspect-ratio: 280 / 590; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .phone:focus-visible { outline: 3px solid var(--color-primary); outline-offset: .35rem; }
   .speaker { position: absolute; z-index: 3; top: 17px; left: 50%; width: 4.8rem; height: .55rem; border-radius: 999px; background: #1b1b1b; transform: translateX(-50%); }
   .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 5.7rem .85rem 1.5rem; border-radius: 2.18rem; background: #fff; }
   h3 { margin: 0 0 .8rem; color: #1c1917; font-size: 1.12rem; font-weight: 750; letter-spacing: -.02em; }
-  .search-list { display: flex; flex-direction: column; gap: .4rem; }
+  .search-list { display: flex; min-height: 0; padding-right: .15rem; flex: 1; flex-direction: column; gap: .4rem; overflow-y: auto; scrollbar-width: none; }
+  .search-list::-webkit-scrollbar { display: none; }
   h4 { margin: .2rem 0 0; color: #78716c; font-size: .58rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
   .search-card { display: grid; grid-template-columns: 3rem 1fr; gap: .65rem; align-items: center; padding: .5rem .6rem; border: 1px solid #e7e5e4; border-radius: .8rem; background: #fff; }
   .profile-avatar-wrap { display: flex; width: 3rem; align-items: center; }

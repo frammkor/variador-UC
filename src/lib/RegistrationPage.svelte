@@ -94,7 +94,7 @@
     margin-bottom: 2.5rem;
     color: rgba(255, 255, 255, 0.92);
     font-size: 1.0625rem;
-    line-height: 1.7;
+    line-height: 1.2rem;
   }
 
   .content p {

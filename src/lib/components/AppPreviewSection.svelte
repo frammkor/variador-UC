@@ -81,7 +81,7 @@
 
   .preview-copy p {
     margin-bottom: 0;
-    line-height: 1.6;
+    line-height: 1.2rem;
   }
 
   .preview-demo {
