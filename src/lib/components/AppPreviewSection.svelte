@@ -41,7 +41,7 @@
   .preview-layout {
     display: grid;
     justify-items: center;
-    gap: 2.5rem;
+    gap: 1rem;
   }
 
   .purple :global(.label) {
@@ -61,7 +61,7 @@
     display: grid;
     width: 100%;
     max-width: 34rem;
-    min-height: 10rem;
+    min-height: 8rem;
     align-items: center;
     text-align: center;
   }
