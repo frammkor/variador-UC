@@ -17,19 +17,17 @@ export const translations = {
       registrationCta: 'I want to be a Dandy',
       preview: {
         label: 'Illustrative platform preview',
-        nextStep: 'Show the next step',
-        tapHint: 'Tap to continue',
+        tapHint: 'Swipe to explore',
         progressLabel: 'Preview steps',
-        steps: ['Select your milonga', 'Pick an available dancer', 'Reservation created'],
+        steps: ['Select your milonga', 'Pick an available dancer', 'Reservation confirmed'],
         eventType: 'Milonga',
         viewProfile: 'View profile',
         age: 'Age',
         reviews: 'Reviews',
         candidatesPending: 'More candidates may still apply…',
         continue: 'Continue',
-        continueWith: 'Continue with Tito',
-        successLead: 'Your tango night is taking shape.',
-        successNote: 'We’ll send the details when everything is confirmed.',
+        successLead: 'Your tango night is all set.',
+        successNote: 'We’ll send you all the details.',
         withDancer: 'with Tito'
       }
     },
@@ -40,8 +38,20 @@ export const translations = {
         'A taxi dancer is a professional dancer you can book to share a milonga, class, or practice. Beyond dancing, they can help you feel comfortable in the local scene, understand its customs, and make the most of your time on the dance floor.'
     },
     previewSection: {
-      title: 'See how it works',
-      description: 'Explore a preview of the experience, from choosing a milonga to confirming your dancer.'
+      steps: [
+        {
+          title: 'Meet your Dandy in 3 simple steps',
+          description: 'See how easy it is.'
+        },
+        {
+          title: 'Choose the right dancer for your night',
+          description: 'Explore the available dancers and choose the Dandy you want.'
+        },
+        {
+          title: 'A tango night guaranteed',
+          description: 'You’re in good hands. Just enjoy the milonga.'
+        }
+      ]
     },
     why: {
       eyebrow: 'Why Dandy Dancers',
@@ -122,19 +132,17 @@ export const translations = {
       registrationCta: 'Quiero ser un Dandy',
       preview: {
         label: 'Vista ilustrativa de la plataforma',
-        nextStep: 'Mostrar el siguiente paso',
-        tapHint: 'Tocá para continuar',
+        tapHint: 'Deslizá para explorar',
         progressLabel: 'Pasos de la demostración',
-        steps: ['Elegí tu milonga', 'Elegí un bailarín disponible', 'Reserva creada'],
+        steps: ['Elegí tu milonga', 'Elegí un bailarín disponible', 'Reserva confirmada'],
         eventType: 'Milonga',
         viewProfile: 'Ver perfil',
         age: 'Edad',
         reviews: 'Reseñas',
         candidatesPending: 'Todavía pueden sumarse más candidatos…',
         continue: 'Continuar',
-        continueWith: 'Continuar con Tito',
-        successLead: 'Tu noche de tango está tomando forma.',
-        successNote: 'Te enviaremos los detalles cuando todo esté confirmado.',
+        successLead: 'Tu noche de tango ya está lista.',
+        successNote: 'Te enviaremos todos los detalles.',
         withDancer: 'con Tito'
       }
     },
@@ -145,8 +153,20 @@ export const translations = {
         'Un taxi dancer es un bailarín profesional que podés contratar para compartir una milonga, una clase o una práctica. Además de bailar, puede ayudarte a sentirte cómodo en la escena local, comprender sus códigos y aprovechar al máximo tu tiempo en la pista.'
     },
     previewSection: {
-      title: 'Mirá cómo funciona',
-      description: 'Explorá una vista previa de la experiencia, desde elegir una milonga hasta confirmar tu bailarín.'
+      steps: [
+        {
+          title: 'Conocé a tu Dandy en 3 simples pasos',
+          description: 'Mirá lo fácil que es.'
+        },
+        {
+          title: 'Elegí al bailarín ideal para tu noche',
+          description: 'Explorá los bailarines disponibles y elegí al Dandy que quieras.'
+        },
+        {
+          title: 'Una noche de tango asegurada',
+          description: 'Estás en buenas manos. Vos disfrutá de la milonga.'
+        }
+      ]
     },
     why: {
       eyebrow: 'Por qué Dandy Dancers',

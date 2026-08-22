@@ -5,7 +5,8 @@
   import SeoHead from '$lib/components/SeoHead.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
-  import TaxiDancerPreviewSection from '$lib/components/TaxiDancerPreviewSection.svelte';
+  import AppPreviewSection from '$lib/components/AppPreviewSection.svelte';
+  import PhonePreview from '$lib/components/PhonePreview.svelte';
   import WhySection from '$lib/components/WhySection.svelte';
 
   let { language } = $props();
@@ -27,9 +28,10 @@
     registrationHref="./taxi-dancer-registration/"
   />
   <WhySection copy={copy.why} />
-  <TaxiDancerPreviewSection
+  <AppPreviewSection
     copy={copy.previewSection}
     previewCopy={copy.hero.preview}
+    PreviewComponent={PhonePreview}
   />
   <AboutSection copy={copy.about} />
 </main>

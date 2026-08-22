@@ -192,12 +192,15 @@
     height: 2.5rem;
     padding: 0;
     place-items: center;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
+    border: 0;
     color: var(--color-heading);
-    background: var(--color-surface);
+    background: transparent;
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  .close:hover {
+    color: var(--color-primary);
   }
 
   @media (min-width: 55rem) {
