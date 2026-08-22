@@ -3,6 +3,10 @@
   import { taxiDancerFormUrl } from '$lib/config.js';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
+  import AppPreviewSection from '$lib/components/AppPreviewSection.svelte';
+  import TaxiRegistrationPreview from '$lib/components/TaxiRegistrationPreview.svelte';
+  import WhySection from '$lib/components/WhySection.svelte';
+  import TaxiDancerComparison from '$lib/components/TaxiDancerComparison.svelte';
 
   let { language } = $props();
   const copy = $derived(getTranslations(language));
@@ -41,6 +45,19 @@
     </a>
   </article>
 </main>
+
+<WhySection copy={copy.registration.why} ctaHref={taxiDancerFormUrl} ctaExternal />
+
+<AppPreviewSection
+  copy={copy.registration.previewSection}
+  previewCopy={copy.registration.preview}
+  PreviewComponent={TaxiRegistrationPreview}
+/>
+
+<TaxiDancerComparison
+  copy={copy.registration.comparison}
+  ctaHref={taxiDancerFormUrl}
+/>
 
 <SiteFooter copy={copy.footer} />
 

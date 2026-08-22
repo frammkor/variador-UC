@@ -1,14 +1,14 @@
 <script>
-  import { asset } from '$app/paths';
+  import PreviewAppHeader from './PreviewAppHeader.svelte';
 
   let { copy, activeStep = $bindable(0) } = $props();
-  let selectedDancer = $state(1);
   const dancers = [
-    { name: 'Fran', age: 33, rating: '90%', price: '30', image: '/images/td-ia-06.png' },
-    { name: 'Tito', age: 28, rating: '85%', price: '30', image: '/images/td-ia-04.png' },
-    { name: 'Edu', age: 41, rating: '97%', price: '35', image: '/images/td-ia-05.png' }
+    { name: 'Fran', age: 33, rating: '90%', price: '30', image: '/images/td-ia-06.webp' },
+    { name: 'Tito', age: 28, rating: '85%', price: '30', image: '/images/td-ia-04.webp' },
+    { name: 'Edu', age: 41, rating: '97%', price: '35', image: '/images/td-ia-05.webp' }
   ];
   let pointerStartX = 0;
+  let didSwipe = false;
 
   function nextStep() {
     activeStep = Math.min(activeStep + 1, copy.steps.length - 1);
@@ -20,6 +20,7 @@
 
   /** @param {PointerEvent} event */
   function handlePointerDown(event) {
+    didSwipe = false;
     pointerStartX = event.clientX;
     const phone = /** @type {HTMLDivElement} */ (event.currentTarget);
     phone.setPointerCapture(event.pointerId);
@@ -32,26 +33,42 @@
     phone.releasePointerCapture(event.pointerId);
     if (Math.abs(distance) < 35) return;
 
+    didSwipe = true;
     if (distance < 0) nextStep();
     else previousStep();
   }
 
+  function handleClick() {
+    if (didSwipe) {
+      didSwipe = false;
+      return;
+    }
+    nextStep();
+  }
+
+  /** @param {KeyboardEvent} event */
+  function handleKeydown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      nextStep();
+    }
+  }
 </script>
 
 <div class="preview">
   <div
     class="phone"
+    onclick={handleClick}
+    onkeydown={handleKeydown}
     onpointerdown={handlePointerDown}
     onpointerup={handlePointerUp}
-    role="group"
+    role="button"
+    tabindex="0"
     aria-label={copy.progressLabel}
   >
     <span class="speaker" aria-hidden="true"></span>
     <span class="screen">
-      <span class="app-header">
-        <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
-        <span class="menu-placeholder" aria-hidden="true"><i></i><i></i><i></i></span>
-      </span>
+      <PreviewAppHeader />
       {#if activeStep === 0}
         <span class="stepper" aria-hidden="true"><span class="step active">1</span><span class="step-line"></span><span class="step">2</span><span class="step-line"></span><span class="step">3</span></span>
         <span class="section-title">{copy.steps[0]}</span>
@@ -65,23 +82,31 @@
           <span class="event-copy"><small>{copy.eventType}</small><strong>La Viruta</strong><span>23:30–04:00 · Palermo</span><span class="event-meta">★ 4.7 &nbsp; · &nbsp; Buenos Aires</span></span>
           <span class="radio"></span>
         </span>
-        <button class="continue" type="button" onclick={nextStep}>{copy.continue} <span>→</span></button>
+        <span class="continue">{copy.continue} <span>→</span></span>
       {:else if activeStep === 1}
         <span class="stepper" aria-hidden="true"><span class="step done">✓</span><span class="step-line active"></span><span class="step active">2</span><span class="step-line"></span><span class="step">3</span></span>
         <span class="section-title">{copy.steps[1]}</span>
-        <span class="dancer-list" role="radiogroup">
+        <span class="dancer-list">
           {#each dancers as dancer, index}
-            <label class:selected={index === selectedDancer} class="dancer-row">
-              <span class="avatar"><img src={dancer.image} alt="" draggable="false" /></span>
+            <span class:selected={index === 1} class="dancer-row">
+              <span class="avatar"
+                ><img
+                  src={dancer.image}
+                  alt=""
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  draggable="false"
+                /></span
+              >
               <span class="dancer-name"><strong>{dancer.name}</strong><small>{copy.viewProfile}</small></span>
               <span class="dancer-stats"><strong>${dancer.price}/hr</strong><small>{copy.age} {dancer.age}</small><small class="rating" aria-label={`${copy.reviews}: ${dancer.rating}`}>★ {dancer.rating}</small></span>
-              <input type="radio" name="preview-dancer" value={index} bind:group={selectedDancer} />
-              <span class="radio" aria-hidden="true"></span>
-            </label>
+              <span class:selected={index === 1} class="radio" aria-hidden="true"></span>
+            </span>
           {/each}
         </span>
         <span class="pending">{copy.candidatesPending}</span>
-        <button class="continue" type="button" onclick={nextStep}>{copy.continue} <span>→</span></button>
+        <span class="continue">{copy.continue} <span>→</span></span>
       {:else}
         <span class="success">
           <span class="success-mark">✓</span><small>DANDY DANCERS</small><strong>{copy.steps[2]}</strong>
@@ -102,15 +127,10 @@
 <style>
   .preview { display: grid; justify-items: center; }
   .label { margin: .75rem 0 0; color: var(--color-muted); font-size: .6875rem; }
-  .phone { position: relative; display: block; width: min(76vw, 18.25rem); aspect-ratio: 280 / 540; padding: 8px; overflow: hidden; border: 0; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: grab; font: inherit; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-  .phone:active { cursor: grabbing; }
+  .phone { position: relative; display: block; width: min(76vw, 18.25rem); aspect-ratio: 280 / 540; padding: 8px; overflow: hidden; border: 0; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; font: inherit; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .phone:focus-visible { outline: 3px solid var(--color-primary); outline-offset: .35rem; }
   .speaker { position: absolute; z-index: 3; top: 17px; left: 50%; width: 4.8rem; height: .55rem; border-radius: 999px; background: #1b1b1b; transform: translateX(-50%); }
-  .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 4.75rem .85rem 1.5rem; border-radius: 2.18rem; background: #fff; }
-  .app-header { position: absolute; top: 0; right: 0; left: 0; display: flex; height: 4rem; padding: 1rem .85rem .45rem; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid rgb(255 255 255 / 8%); background: linear-gradient(180deg, #171717, #211b23); }
-  .app-header img { width: 4.65rem; height: auto; }
-  .menu-placeholder { display: grid; width: 1.2rem; gap: .22rem; padding-bottom: .2rem; }
-  .menu-placeholder i { display: block; height: 1.5px; border-radius: 999px; background: rgb(255 255 255 / 88%); }
+  .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 5.7rem .85rem 1.5rem; border-radius: 2.18rem; background: #fff; }
   .stepper { display: flex; align-items: center; justify-content: center; margin: .15rem 0 1rem; }
   .step { display: grid; width: 1.45rem; height: 1.45rem; flex: 0 0 auto; place-items: center; border-radius: 50%; color: #a8a29e; background: #f3f4f6; font-size: .65rem; font-weight: 700; }
   .step.active, .step.done { color: #fff; background: #7f22fe; box-shadow: 0 2px 5px #ddd6fe; }
@@ -129,7 +149,7 @@
   .event-copy > span { overflow: hidden; color: #57534e; font-size: .58rem; white-space: nowrap; text-overflow: ellipsis; }
   .event-copy .event-meta { color: #40ac8d; }
   .radio { display: grid; width: .9rem; height: .9rem; box-sizing: border-box; flex: 0 0 auto; place-items: center; border: 2px solid #d6d3d1; border-radius: 50%; background: #fff; }
-  .radio.selected, .dancer-row input:checked + .radio { border: 4px solid #7f22fe; }
+  .radio.selected { border: 4px solid #7f22fe; }
   .continue { display: flex; width: 100%; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border: 0; border-radius: .7rem; color: #fff; background: #7f22fe; font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px rgb(127 34 254 / 24%); cursor: pointer; }
   .dancer-list { display: flex; flex-direction: column; gap: .5rem; }
   .dancer-row { display: grid; grid-template-columns: 3rem 1fr auto 1rem; gap: .6rem; align-items: center; padding: .55rem .6rem; border: 1px solid #e7e5e4; border-radius: .8rem; background: #fff; }
@@ -142,8 +162,6 @@
   .dancer-stats { align-items: flex-end; color: #79716b; font-size: .52rem; line-height: 1.35; }
   .dancer-stats strong { color: #1c1917; font-size: .57rem; }
   .dancer-stats .rating { color: #27856d; font-weight: 700; }
-  .dancer-row input { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; border: 0; clip: rect(0 0 0 0); white-space: nowrap; }
-  .dancer-row input:focus-visible + .radio { outline: 2px solid #7f22fe; outline-offset: 2px; }
   .pending { margin: .65rem 0; padding: .65rem; border: 1px dashed #d6d3d1; border-radius: .7rem; color: #a8a29e; background: #fafaf9; font-size: .55rem; text-align: center; }
   .success { display: flex; height: 100%; align-items: center; justify-content: center; flex-direction: column; text-align: center; }
   .success-mark { display: grid; width: 4rem; height: 4rem; margin-bottom: 1.2rem; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(145deg, #a855f7, #6d28d9); box-shadow: 0 8px 24px rgb(126 34 206 / 28%); font-size: 2rem; }

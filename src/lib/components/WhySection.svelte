@@ -1,5 +1,5 @@
 <script>
-  let { copy } = $props();
+  let { copy, ctaHref = undefined, ctaExternal = false } = $props();
 </script>
 
 <section class="section why" id="why">
@@ -16,6 +16,15 @@
         </section>
       {/each}
     </div>
+
+    {#if copy.cta && ctaHref}
+      <a
+        class="cta"
+        href={ctaHref}
+        target={ctaExternal ? '_blank' : undefined}
+        rel={ctaExternal ? 'noreferrer' : undefined}
+      >{copy.cta}</a>
+    {/if}
   </div>
 </section>
 
@@ -80,6 +89,21 @@
     margin: 0;
     font-size: 0.875rem;
     line-height: 1.2rem;
+  }
+
+  .cta {
+    display: flex;
+    width: fit-content;
+    min-height: 3rem;
+    margin: 2rem auto 0;
+    padding: 0.8rem 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: #ffffff;
+    background: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
   }
 
   @media (min-width: 48rem) {

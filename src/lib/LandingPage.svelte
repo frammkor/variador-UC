@@ -8,9 +8,11 @@
   import AppPreviewSection from '$lib/components/AppPreviewSection.svelte';
   import PhonePreview from '$lib/components/PhonePreview.svelte';
   import WhySection from '$lib/components/WhySection.svelte';
+  import { getWhatsAppHref, taxiDancerInquiryMessage } from '$lib/config.js';
 
   let { language } = $props();
   const copy = $derived(getTranslations(language));
+  const whatsappHref = getWhatsAppHref(taxiDancerInquiryMessage);
 </script>
 
 <SeoHead language={language} title={copy.metaTitle} description={copy.metaDescription} />
@@ -27,7 +29,7 @@
     modalCopy={copy.taxiDancer}
     registrationHref="./taxi-dancer-registration/"
   />
-  <WhySection copy={copy.why} />
+  <WhySection copy={copy.why} ctaHref={whatsappHref} ctaExternal />
   <AppPreviewSection
     copy={copy.previewSection}
     previewCopy={copy.hero.preview}

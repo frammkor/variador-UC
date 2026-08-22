@@ -8,7 +8,7 @@
   <div class="container header-content">
     <div class="brand-group">
       <a class="brand" href={homeHref} aria-label="Dandy Dancers">
-        <img src={asset('/images/DD-logo.png')} alt="Dandy Dancers" />
+        <img src={asset('/images/DD-logo-light.png')} alt="Dandy Dancers" width="500" height="299" />
       </a>
       <span class="desktop-tagline">{copy.tagline}</span>
     </div>
