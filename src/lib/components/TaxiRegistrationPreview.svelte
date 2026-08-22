@@ -140,7 +140,7 @@
 <style>
   .preview { display: grid; justify-items: center; }
   .label { margin: .75rem 0 0; color: var(--color-muted); font-size: .6875rem; }
-  .phone { position: relative; display: block; width: min(86vw, 18.25rem); aspect-ratio: 280 / 590; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .phone { position: relative; display: block; width: min(82vw, 17rem, 39svh); aspect-ratio: 1 / 2; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: #1c1917; background: #1b1b1b; box-shadow: 0 1.25rem 3rem rgb(52 20 73 / 18%); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .phone:focus-visible { outline: 3px solid var(--color-primary); outline-offset: .35rem; }
   .speaker { position: absolute; z-index: 3; top: 17px; left: 50%; width: 4.8rem; height: .55rem; border-radius: 999px; background: #1b1b1b; transform: translateX(-50%); }
   .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 5.7rem .85rem 1.5rem; border-radius: 2.18rem; background: #fff; }
@@ -156,7 +156,8 @@
   .search-copy small { color: #78716c; font-size: .5rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
   .search-copy strong { font-size: .77rem; }
   .search-copy span { color: #57534e; font-size: .58rem; }
-  .detail-card { display: grid; gap: .65rem; padding: .8rem; border: 1px solid #e9d5ff; border-radius: .9rem; background: color-mix(in srgb, var(--color-primary) 5%, #fff); box-shadow: 0 3px 10px rgb(126 34 206 / 8%); }
+  .detail-card { display: grid; min-height: 0; gap: .65rem; padding: .8rem; overflow-y: auto; border: 1px solid #e9d5ff; border-radius: .9rem; background: color-mix(in srgb, var(--color-primary) 5%, #fff); box-shadow: 0 3px 10px rgb(126 34 206 / 8%); scrollbar-width: none; }
+  .detail-card::-webkit-scrollbar { display: none; }
   .profile-heading { display: grid; grid-template-columns: 3rem 1fr auto; gap: .65rem; align-items: center; }
   .profile-name { display: flex; min-width: 0; flex-direction: column; }
   .profile-name strong { overflow: hidden; font-size: .75rem; white-space: nowrap; text-overflow: ellipsis; }
@@ -169,7 +170,7 @@
   dl div { display: flex; padding: .4rem; flex-direction: column; border-radius: .45rem; background: rgb(255 255 255 / 72%); font-size: .55rem; }
   dt { color: #78716c; }
   dd { margin: 0; color: #292524; font-weight: 700; }
-  .continue { display: flex; width: 100%; box-sizing: border-box; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border-radius: .7rem; color: #fff; background: #7f22fe; font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px rgb(127 34 254 / 24%); }
+  .continue { display: flex; width: 100%; flex: 0 0 auto; box-sizing: border-box; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border-radius: .7rem; color: #fff; background: #7f22fe; font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px rgb(127 34 254 / 24%); }
   .success { display: flex; height: 100%; align-items: center; justify-content: center; flex-direction: column; text-align: center; }
   .success-mark { display: grid; width: 4rem; height: 4rem; margin-bottom: 1.2rem; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(145deg, #a855f7, #6d28d9); box-shadow: 0 8px 24px rgb(126 34 206 / 28%); font-size: 2rem; }
   .success > small { color: #7f22fe; font-size: .55rem; font-weight: 800; letter-spacing: .14em; }
@@ -181,4 +182,8 @@
   .progress { display: flex; gap: .5rem; margin-top: 1rem; }
   .progress button { width: .625rem; height: .625rem; padding: 0; border: 0; border-radius: 50%; background: var(--color-primary-200); cursor: pointer; }
   .progress button.active { background: var(--color-primary); }
+
+  @media (min-width: 48rem) {
+    .phone { width: 18.25rem; aspect-ratio: 280 / 590; }
+  }
 </style>
