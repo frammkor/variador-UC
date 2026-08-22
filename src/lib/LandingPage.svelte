@@ -8,6 +8,7 @@
   import AppPreviewSection from '$lib/components/AppPreviewSection.svelte';
   import PhonePreview from '$lib/components/PhonePreview.svelte';
   import WhySection from '$lib/components/WhySection.svelte';
+  import DancersCarouselSection from '$lib/components/DancersCarouselSection.svelte';
   import { getWhatsAppHref, taxiDancerInquiryMessage } from '$lib/config.js';
 
   let { language } = $props();
@@ -34,6 +35,10 @@
     copy={copy.previewSection}
     previewCopy={copy.hero.preview}
     PreviewComponent={PhonePreview}
+  />
+  <DancersCarouselSection
+    copy={copy.dancers}
+    registrationHref="./taxi-dancer-registration/"
   />
   <AboutSection copy={copy.about} />
 </main>

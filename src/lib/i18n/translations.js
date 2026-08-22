@@ -92,6 +92,15 @@ export const translations = {
         }
       ]
     },
+    dancers: {
+      eyebrow: 'Our dancers',
+      title: 'Meet the dancers',
+      intro: 'These are the Dandies who will join you for a tango night your way.',
+      carouselLabel: 'Dandy Dancers profiles',
+      rating: 'Rating',
+      primaryCta: 'You’ll meet them soon',
+      registrationCta: 'I want to be a Dandy'
+    },
     about: {
       eyebrow: 'Behind the project',
       title: 'About the founder',
@@ -263,6 +272,15 @@ export const translations = {
             'Disfrutá de compañía confiable y orientación personalizada mientras aprovechás tu tiempo en Buenos Aires.'
         }
       ]
+    },
+    dancers: {
+      eyebrow: 'Nuestros bailarines',
+      title: 'Conocé a los bailarines',
+      intro: 'Estos son los Dandies que van a acompañarte a vivir una noche de tango a tu manera.',
+      carouselLabel: 'Perfiles de Dandy Dancers',
+      rating: 'Puntuación',
+      primaryCta: 'Pronto los conocerás',
+      registrationCta: 'Quiero ser un Dandy'
     },
     about: {
       eyebrow: 'Detrás del proyecto',
