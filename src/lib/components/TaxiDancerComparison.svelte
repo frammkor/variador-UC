@@ -1,5 +1,27 @@
 <script>
   let { copy, ctaHref } = $props();
+  /** @type {HTMLDivElement | undefined} */
+  let carousel;
+  let activeComparison = $state(0);
+
+  function handleScroll() {
+    const carouselElement = carousel;
+    if (!carouselElement) return;
+    const cards = /** @type {HTMLElement[]} */ (Array.from(carouselElement.children));
+    activeComparison = cards.reduce((closestIndex, card, index) => {
+      const currentDistance = Math.abs(card.offsetLeft - carouselElement.scrollLeft);
+      const closestDistance = Math.abs(cards[closestIndex].offsetLeft - carouselElement.scrollLeft);
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+  }
+
+  /** @param {number} index */
+  function scrollToComparison(index) {
+    const carouselElement = carousel;
+    const card = /** @type {HTMLElement | undefined} */ (carouselElement?.children[index]);
+    if (!card) return;
+    carouselElement?.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+  }
 </script>
 
 <section class="section comparison" aria-labelledby="comparison-title">
@@ -15,7 +37,7 @@
       <strong class="dandy-heading">Dandy Dancers</strong>
     </div>
 
-    <div class="comparison-rows">
+    <div class="comparison-rows" bind:this={carousel} onscroll={handleScroll}>
       {#each copy.items as item}
         <section class="comparison-row">
           <h3>{item.title}</h3>
@@ -23,6 +45,17 @@
           <div><strong class="mobile-label">{copy.columns.intermediary}</strong><p>{item.intermediary}</p></div>
           <div class="dandy"><strong class="mobile-label">Dandy Dancers</strong><p>{item.dandy}</p></div>
         </section>
+      {/each}
+    </div>
+    <div class="carousel-progress" aria-label={copy.carouselLabel}>
+      {#each copy.items as _, index}
+        <button
+          type="button"
+          class:active={index === activeComparison}
+          aria-label={`${index + 1}`}
+          aria-current={index === activeComparison ? 'step' : undefined}
+          onclick={() => scrollToComparison(index)}
+        ></button>
       {/each}
     </div>
     <p class="carousel-hint">{copy.swipeHint}</p>
@@ -48,7 +81,10 @@
   .comparison-row p { margin: .25rem 0 0; font-size: .875rem; line-height: 1.2rem; }
   .mobile-label { color: var(--color-muted); font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
   .dandy .mobile-label { color: var(--color-primary-700); }
-  .carousel-hint { margin: .75rem 0 0; color: var(--color-muted); font-size: .75rem; text-align: center; }
+  .carousel-progress { display: flex; gap: .5rem; margin-top: 1rem; justify-content: center; }
+  .carousel-progress button { width: .625rem; height: .625rem; padding: 0; border: 0; border-radius: 50%; background: var(--color-primary-200); cursor: pointer; }
+  .carousel-progress button.active { background: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-50); }
+  .carousel-hint { margin: .5rem 0 0; color: var(--color-muted); font-size: .75rem; text-align: center; }
   .cta { display: flex; width: fit-content; min-height: 3rem; margin: 2rem auto 0; padding: .8rem 1.25rem; align-items: center; justify-content: center; border-radius: 999px; color: #fff; background: var(--color-primary); font-weight: 700; text-decoration: none; }
 
   @media (min-width: 64rem) {
@@ -61,12 +97,13 @@
     .comparison-row { align-items: stretch; }
     .comparison-row h3 { grid-column: auto; text-align: left; }
     .comparison-row h3,
-    .comparison-row div { display: flex; min-height: 0; padding: 1rem; align-items: center; text-align: left; }
+    .comparison-row div { display: flex; min-height: 0; padding: 1rem; align-items: center; justify-content: flex-start; flex-direction: row; text-align: left; }
     .comparison-row div,
     .comparison-row div:nth-of-type(2),
     .comparison-row .dandy { grid-column: auto; border-top: 0; border-left: 1px solid var(--color-primary-100); }
     .comparison-row p { margin: 0; }
     .mobile-label { display: none; }
+    .carousel-progress,
     .carousel-hint { display: none; }
   }
 </style>

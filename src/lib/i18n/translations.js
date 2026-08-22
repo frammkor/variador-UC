@@ -153,6 +153,7 @@ export const translations = {
         eyebrow: 'A better way to work',
         title: 'Value your embrace',
         intro: 'Combine the control of working independently with the speed of an intermediary.',
+        carouselLabel: 'Comparison topics',
         swipeHint: 'Swipe to see more',
         columns: { solo: 'On your own', intermediary: 'With an intermediary' },
         items: [
@@ -324,6 +325,7 @@ export const translations = {
         eyebrow: 'Otra forma de trabajar',
         title: 'Tu abrazo vale',
         intro: 'Combiná el control de trabajar por tu cuenta con la agilidad de un intermediario.',
+        carouselLabel: 'Temas de comparación',
         swipeHint: 'Deslizá para ver más',
         columns: { solo: 'Por tu cuenta', intermediary: 'Con intermediario' },
         items: [
