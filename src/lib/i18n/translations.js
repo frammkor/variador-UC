@@ -9,11 +9,10 @@ export const translations = {
     metaDescription:
       'Book a professional tango dance partner for milongas, lessons, and practice in Buenos Aires. A welcoming local tango experience for adult travelers.',
     hero: {
-      title: 'Book taxi dancers for a night out dancing',
+      title: 'Book Taxi Dancers',
       supporting:
-        'We help you find a dancer to enjoy the tango experience you came to Buenos Aires for.',
+        'We help you find a dancer for the tango experience you dream of in Buenos Aires.',
       cta: 'I want a Taxi Dancer',
-      whatsappMessage: 'I want a taxi dancer for',
       registrationCta: 'I want to be a Dandy',
       preview: {
         label: 'Illustrative platform preview',
@@ -110,11 +109,10 @@ export const translations = {
     metaDescription:
       'Reservá un bailarín profesional de tango para milongas, clases y prácticas en Buenos Aires. Una experiencia local para viajeros adultos.',
     hero: {
-      title: 'Contratá taxi dancers para salir a bailar',
+      title: 'Contrata Taxidancers',
       supporting:
-        'Te ayudamos a encontrar un bailarín para vivir la experiencia de tango que viniste a disfrutar en Buenos Aires.',
+        'Te ayudamos a encontrar un bailarín para vivir la experiencia de tango que soñás en Buenos Aires.',
       cta: 'Quiero un Taxidancer',
-      whatsappMessage: 'Quiero un taxi dancer para',
       registrationCta: 'Quiero ser un Dandy',
       preview: {
         label: 'Vista ilustrativa de la plataforma',

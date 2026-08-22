@@ -1,9 +1,9 @@
 <script>
   import '../app.css';
-  import ChatWidget from '$lib/components/ChatWidget.svelte';
+  import FloatingWhatsApp from '$lib/components/FloatingWhatsApp.svelte';
 
   let { children } = $props();
 </script>
 
 {@render children()}
-<ChatWidget />
+<FloatingWhatsApp />

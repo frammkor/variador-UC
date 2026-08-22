@@ -1,9 +1,9 @@
 <script>
-  import { whatsappUrl } from '$lib/config.js';
+  import { getWhatsAppHref, taxiDancerInquiryMessage } from '$lib/config.js';
   import PhonePreview from './PhonePreview.svelte';
 
   let { copy, registrationHref } = $props();
-  const whatsappHref = $derived(`${whatsappUrl}?text=${encodeURIComponent(copy.whatsappMessage)}`);
+  const whatsappHref = getWhatsAppHref(taxiDancerInquiryMessage);
 </script>
 
 <section class="hero">
@@ -54,8 +54,8 @@
   }
 
   .actions {
-    display: grid;
-    justify-items: start;
+    display: inline-grid;
+    justify-items: center;
     gap: 0.75rem;
   }
 
