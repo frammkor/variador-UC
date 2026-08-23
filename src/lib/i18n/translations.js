@@ -93,19 +93,26 @@ export const translations = {
       ]
     },
     dancers: {
-      eyebrow: 'Our dancers',
+      eyebrow: 'Our Dandies',
       title: 'Meet the dancers',
-      intro: 'These are the Dandies who will join you for a tango night your way.',
+      intro: 'Every embrace holds a story. Choose who you want to share yours with.',
       carouselLabel: 'Dandy Dancers profiles',
       rating: 'Rating',
-      primaryCta: 'You’ll meet them soon',
+      primaryCta: 'Very soon',
       registrationCta: 'I want to be a Dandy'
     },
     about: {
       eyebrow: 'Behind the project',
       title: 'About the founder',
       description:
-        'Dandy Dancers is an independent project founded to make tango experiences in Buenos Aires easier to access, more comfortable, and more memorable.'
+        'Dandy Dancers is an independent project founded to make tango experiences in Buenos Aires easier to access, more comfortable, and more memorable.',
+      moreLink: 'More about Franco',
+      modalTitle: 'Meet Franco Cespi',
+      modalDescription:
+        'Franco Cespi is the founder of Dandy Dancers. He created the project around a simple idea: helping more people experience tango in Buenos Aires with confidence and in good company.',
+      websiteLink: 'francocespi.com',
+      instagramLink: '@franco.cespi',
+      modalClose: 'Close founder information'
     },
     registration: {
       eyebrow: 'Be part of our taxi dancer team',
@@ -274,19 +281,26 @@ export const translations = {
       ]
     },
     dancers: {
-      eyebrow: 'Nuestros bailarines',
+      eyebrow: 'Nuestros Dandies',
       title: 'Conocé a los bailarines',
-      intro: 'Estos son los Dandies que van a acompañarte a vivir una noche de tango a tu manera.',
+      intro: 'En cada abrazo, una historia. Elegí con quién compartir la tuya.',
       carouselLabel: 'Perfiles de Dandy Dancers',
       rating: 'Puntuación',
-      primaryCta: 'Pronto los conocerás',
+      primaryCta: 'Muy pronto',
       registrationCta: 'Quiero ser un Dandy'
     },
     about: {
       eyebrow: 'Detrás del proyecto',
       title: 'Sobre el fundador',
       description:
-        'Dandy Dancers es un proyecto independiente creado para hacer que las experiencias de tango en Buenos Aires sean más accesibles, cómodas y memorables.'
+        'Dandy Dancers es un proyecto independiente creado para hacer que las experiencias de tango en Buenos Aires sean más accesibles, cómodas y memorables.',
+      moreLink: 'Más sobre Franco',
+      modalTitle: 'Conocé a Franco Cespi',
+      modalDescription:
+        'Franco Cespi es el fundador de Dandy Dancers. Creó el proyecto a partir de una idea simple: ayudar a que más personas vivan el tango en Buenos Aires con confianza y en buena compañía.',
+      websiteLink: 'francocespi.com',
+      instagramLink: '@franco.cespi',
+      modalClose: 'Cerrar información sobre el fundador'
     },
     registration: {
       eyebrow: 'Sé parte de nuestro equipo de taxi dancers',

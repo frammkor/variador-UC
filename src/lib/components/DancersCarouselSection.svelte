@@ -2,14 +2,14 @@
   let { copy, registrationHref } = $props();
 
   const dancers = [
-    { name: 'Tito', rating: '4.9', image: '/images/td-ia-04.webp' },
-    { name: 'Kari', rating: '4.9', image: '/images/td-ia-05.webp' },
-    { name: 'Luggy', rating: '4.6', image: '/images/td-ia-06.webp' },
-    { name: 'Lucy', rating: '5', image: '/images/td-ia-04.webp' },
-    { name: 'Fran', rating: '4.8', image: '/images/td-ia-05.webp' },
-    { name: 'More', rating: '4.9', image: '/images/td-ia-06.webp' },
-    { name: 'Lucho', rating: '4.6', image: '/images/td-ia-04.webp' },
-    { name: 'Vicky', rating: '4.7', image: '/images/td-ia-05.webp' }
+    { name: 'Tito', rating: '4.9', image: '/images/td-ia-m-04.webp' },
+    { name: 'Kari', rating: '4.9', image: '/images/td-ia-f-01.webp' },
+    { name: 'Luggy', rating: '4.6', image: '/images/td-ia-m-05.webp' },
+    { name: 'Lu', rating: '5', image: '/images/td-ia-f-02.webp' },
+    { name: 'Fran', rating: '4.8', image: '/images/td-ia-m-06.webp' },
+    { name: 'More', rating: '4.9', image: '/images/td-ia-f-03.webp' },
+    { name: 'Lucho', rating: '4.6', image: '/images/td-ia-m-07.webp' },
+    { name: 'Vicky', rating: '4.7', image: '/images/td-ia-f-09.webp' }
   ];
 </script>
 
@@ -58,7 +58,7 @@
   .dancer-list { display: flex; gap: 2.75rem; padding-right: 2.75rem; }
   .dancer-card { position: relative; width: clamp(10.5rem, 38vw, 13rem); flex: 0 0 auto; isolation: isolate; overflow: hidden; border-radius: .85rem; outline: 1px solid var(--color-header); outline-offset: -1px; color: #fff; background: var(--color-primary-700); }
   .photo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--color-primary-700); }
-  .photo img { width: 100%; height: 100%; object-fit: cover; filter: blur(14px) saturate(.7); transform: scale(1.16); -webkit-user-drag: none; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; filter: blur(9px) saturate(.78); transform: scale(1.11); -webkit-user-drag: none; }
   .photo::after { position: absolute; z-index: 1; right: 0; bottom: 0; left: 0; height: 46%; content: ''; background: linear-gradient(transparent, rgb(18 5 24 / 62%)); pointer-events: none; }
   .identity { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; left: 1rem; text-shadow: 0 2px 10px rgb(18 5 24 / 72%); }
   .identity h3 { margin: 0; color: #fff; font-size: 1.125rem; font-weight: 600; }

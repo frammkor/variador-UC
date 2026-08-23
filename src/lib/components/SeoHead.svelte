@@ -3,6 +3,7 @@
 
   const siteUrl = 'https://dandydancers.com';
   const logoUrl = `${siteUrl}/images/DD-logo.png`;
+  const socialImageUrl = `${siteUrl}/images/DD-social.png`;
   const pageUrl = $derived(`${siteUrl}/${language}/`);
   const isEnglish = $derived(language === 'en');
   const locale = $derived(isEnglish ? 'en_US' : 'es_AR');
@@ -24,7 +25,11 @@
         foundingDate: '2026',
         founder: {
           '@type': 'Person',
-          name: 'Franco Cespi'
+          '@id': `${siteUrl}/#founder`,
+          name: 'Franco Cespi',
+          url: 'https://francocespi.com/',
+          image: `${siteUrl}/images/franco-cespi.webp`,
+          sameAs: ['https://www.instagram.com/franco.cespi/']
         },
         sameAs: [
           'https://www.instagram.com/dandydancers/',
@@ -95,13 +100,16 @@
   <meta property="og:url" content={pageUrl} />
   <meta property="og:locale" content={locale} />
   <meta property="og:locale:alternate" content={alternateLocale} />
-  <meta property="og:image" content={logoUrl} />
-  <meta property="og:image:alt" content="Dandy Dancers logo" />
+  <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Dandy Dancers" />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={logoUrl} />
+  <meta name="twitter:image" content={socialImageUrl} />
 
   {@html `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, '\\u003c')}<\/script>`}
 </svelte:head>

@@ -111,7 +111,7 @@
     }
 
     .issue {
-      min-height: 10rem;
+      min-height: 9rem;
     }
   }
 
