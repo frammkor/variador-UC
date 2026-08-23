@@ -1,5 +1,5 @@
 <script>
-  let { copy, ctaHref } = $props();
+  let { copy, ctaHref, ctaLabel } = $props();
   /** @type {HTMLDivElement | undefined} */
   let carousel;
   let activeComparison = $state(0);
@@ -34,7 +34,7 @@
       <span></span>
       <strong>{copy.columns.solo}</strong>
       <strong>{copy.columns.intermediary}</strong>
-      <strong class="dandy-heading">Dandy Dancers</strong>
+      <strong class="dandy-heading">{copy.columns.dandy}</strong>
     </div>
 
     <div class="comparison-rows" bind:this={carousel} onscroll={handleScroll}>
@@ -43,7 +43,7 @@
           <h3>{item.title}</h3>
           <div><strong class="mobile-label">{copy.columns.solo}</strong><p>{item.solo}</p></div>
           <div><strong class="mobile-label">{copy.columns.intermediary}</strong><p>{item.intermediary}</p></div>
-          <div class="dandy"><strong class="mobile-label">Dandy Dancers</strong><p>{item.dandy}</p></div>
+          <div class="dandy"><strong class="mobile-label">{copy.columns.dandy}</strong><p>{item.dandy}</p></div>
         </section>
       {/each}
     </div>
@@ -60,7 +60,7 @@
     </div>
     <p class="carousel-hint">{copy.swipeHint}</p>
 
-    <a class="cta" href={ctaHref} target="_blank" rel="noreferrer">{copy.cta}</a>
+    <a class="cta" href={ctaHref} target="_blank" rel="noreferrer">{ctaLabel}</a>
   </div>
 </section>
 

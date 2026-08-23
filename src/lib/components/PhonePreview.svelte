@@ -3,9 +3,9 @@
 
   let { copy, activeStep = $bindable(0) } = $props();
   const dancers = [
-    { name: 'Fran', age: 33, rating: '90%', price: '30', image: '/images/td-ia-06.webp' },
-    { name: 'Tito', age: 28, rating: '85%', price: '30', image: '/images/td-ia-04.webp' },
-    { name: 'Edu', age: 41, rating: '97%', price: '35', image: '/images/td-ia-05.webp' }
+    { name: 'Fran', age: 33, rating: '90%', price: '30', image: '/images/td-ia-m-06.webp' },
+    { name: 'Tito', age: 28, rating: '85%', price: '30', image: '/images/td-ia-m-04.webp' },
+    { name: 'Edu', age: 41, rating: '97%', price: '35', image: '/images/td-ia-m-05.webp' }
   ];
   let pointerStartX = 0;
   let didSwipe = false;

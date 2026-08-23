@@ -57,6 +57,7 @@
 <TaxiDancerComparison
   copy={copy.registration.comparison}
   ctaHref={taxiDancerFormUrl}
+  ctaLabel={copy.registration.cta}
 />
 
 <SiteFooter copy={copy.footer} />

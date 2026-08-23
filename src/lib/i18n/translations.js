@@ -171,14 +171,13 @@ export const translations = {
         intro: 'Combine the control of working independently with the speed of an intermediary.',
         carouselLabel: 'Comparison topics',
         swipeHint: 'Swipe to see more',
-        columns: { solo: 'On your own', intermediary: 'With an intermediary' },
+        columns: { solo: 'On your own', intermediary: 'With an intermediary', dandy: 'With Dandy Dancers' },
         items: [
-          { title: 'Who you dance with', solo: 'You depend on your network.', intermediary: 'You depend on others.', dandy: 'You choose.' },
           { title: 'Your rate', solo: 'You negotiate it.', intermediary: 'They set it.', dandy: 'You set it.' },
           { title: 'Your time', solo: 'Coordinating everything takes time.', intermediary: 'You delegate, but lose control.', dandy: 'See what’s available and sign up in seconds.' },
-          { title: 'Confirming the job', solo: 'Messages and manual follow-up.', intermediary: 'Back-and-forth through a third party.', dandy: 'We tell you when and where.' }
-        ],
-        cta: 'Join Dandy Dancers'
+          { title: 'Confirming the job', solo: 'Messages and manual follow-up.', intermediary: 'Back-and-forth through a third party.', dandy: 'We tell you when and where.' },
+          { title: 'Who you dance with', solo: 'You depend on your network.', intermediary: 'You depend on others.', dandy: 'You choose.' }
+        ]
       }
     },
     footer: {
@@ -359,14 +358,13 @@ export const translations = {
         intro: 'Combiná el control de trabajar por tu cuenta con la agilidad de un intermediario.',
         carouselLabel: 'Temas de comparación',
         swipeHint: 'Deslizá para ver más',
-        columns: { solo: 'Por tu cuenta', intermediary: 'Con intermediario' },
+        columns: { solo: 'Por tu cuenta', intermediary: 'Con intermediario', dandy: 'Con Dandy Dancers' },
         items: [
-          { title: 'Con quién bailás', solo: 'Dependés de tu red.', intermediary: 'Dependés de otros.', dandy: 'Vos elegís.' },
           { title: 'Tu tarifa', solo: 'La negociás.', intermediary: 'La definen.', dandy: 'La definís vos.' },
           { title: 'Tu tiempo', solo: 'Coordinar todo lleva tiempo.', intermediary: 'Delegás, pero perdés el control.', dandy: 'Ves qué hay y te anotás en segundos.' },
-          { title: 'Cerrar el trabajo', solo: 'Mensajes y seguimiento manual.', intermediary: 'Idas y vueltas con un tercero.', dandy: 'Te avisamos cuándo y dónde.' }
-        ],
-        cta: 'Sumarme a Dandy Dancers'
+          { title: 'Cerrar el trabajo', solo: 'Mensajes y seguimiento manual.', intermediary: 'Idas y vueltas con un tercero.', dandy: 'Te avisamos cuándo y dónde.' },
+          { title: 'Con quién bailás', solo: 'Dependés de tu red.', intermediary: 'Dependés de otros.', dandy: 'Vos elegís.' }
+        ]
       }
     },
     footer: {
