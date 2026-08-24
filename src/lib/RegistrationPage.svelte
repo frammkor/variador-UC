@@ -10,6 +10,12 @@
 
   let { language } = $props();
   const copy = $derived(getTranslations(language));
+  const footerLinks = $derived([
+    { href: '../#why', label: copy.why.eyebrow },
+    { href: '../#dancers', label: copy.dancers.eyebrow },
+    { href: '../#testimonials', label: copy.testimonials.eyebrow },
+    { href: '../#about', label: copy.about.eyebrow }
+  ]);
 </script>
 
 <svelte:head>
@@ -60,7 +66,7 @@
   ctaLabel={copy.registration.cta}
 />
 
-<SiteFooter copy={copy.footer} />
+<SiteFooter copy={copy.footer} links={footerLinks} homeHref="../" />
 
 <style>
   main {
@@ -69,9 +75,9 @@
     background:
       linear-gradient(
         90deg,
-        color-mix(in srgb, var(--color-primary-900) 66%, transparent) 0%,
-        color-mix(in srgb, var(--color-primary-900) 46%, transparent) 52%,
-        color-mix(in srgb, var(--color-primary-700) 18%, transparent) 100%
+        color-mix(in srgb, var(--primary-900) 66%, var(--transparent)) 0%,
+        color-mix(in srgb, var(--primary-900) 46%, var(--transparent)) 52%,
+        color-mix(in srgb, var(--primary-700) 18%, var(--transparent)) 100%
       ),
       url('/images/taxis-hero.webp') center / cover no-repeat;
   }
@@ -84,7 +90,7 @@
   h1 {
     max-width: 14ch;
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: var(--white);
     font-size: clamp(2.75rem, 10vw, 5.5rem);
     line-height: 0.98;
     letter-spacing: -0.045em;
@@ -93,7 +99,7 @@
   .content {
     max-width: 48rem;
     margin-bottom: 2.5rem;
-    color: rgba(255, 255, 255, 0.92);
+    color: color-mix(in srgb, var(--white) 92%, var(--transparent));
     font-size: 1.0625rem;
     line-height: 1.2rem;
   }
@@ -103,7 +109,7 @@
   }
 
   article :global(.eyebrow) {
-    color: var(--color-primary-200);
+    color: var(--primary-200);
   }
 
   .cta {
@@ -112,10 +118,10 @@
     padding: 0.8rem 1.25rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--primary-600);
     border-radius: 999px;
-    color: #ffffff;
-    background: var(--color-primary);
+    color: var(--white);
+    background: var(--primary-600);
     font-weight: 700;
     text-decoration: none;
   }

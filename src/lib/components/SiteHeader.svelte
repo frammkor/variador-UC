@@ -1,6 +1,4 @@
 <script>
-  import { asset } from '$app/paths';
-
   let { language, copy, homeHref, languageLinks } = $props();
 </script>
 
@@ -8,7 +6,7 @@
   <div class="container header-content">
     <div class="brand-group">
       <a class="brand" href={homeHref} aria-label="Dandy Dancers">
-        <img src={asset('/images/DD-logo-light.png')} alt="Dandy Dancers" width="500" height="299" />
+        <span class="logo" aria-hidden="true"></span>
       </a>
       <span class="desktop-tagline">{copy.tagline}</span>
     </div>
@@ -36,8 +34,8 @@
 
 <style>
   header {
-    color: #ffffff;
-    background: var(--color-header);
+    color: var(--white);
+    background: var(--header-color);
   }
 
   .header-content {
@@ -68,17 +66,14 @@
     height: var(--header-tagline-height);
     padding-inline: 1rem;
     place-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
-    color: #d7d2d9;
+    border-top: 1px solid color-mix(in srgb, var(--white) 16%, var(--transparent));
+    color: var(--header-text-color);
     font-size: 0.75rem;
     line-height: 1.35;
     text-align: center;
   }
 
-  img {
-    width: auto;
-    max-height: 54px;
-  }
+  .logo { display: block; width: 90px; aspect-ratio: 500 / 299; background: var(--asset-logo-on-dark) center / contain no-repeat; }
 
   .header-actions {
     display: flex;
@@ -99,7 +94,7 @@
   }
 
   .language-nav a:not([aria-current='page']) {
-    color: #bdb6c0;
+    color: var(--header-muted-color);
     text-decoration: none;
   }
 
@@ -108,9 +103,7 @@
       padding-block: 12px;
     }
 
-    img {
-      max-height: 72px;
-    }
+    .logo { width: 120px; }
   }
 
   @media (min-width: 64rem) {
@@ -120,13 +113,13 @@
 
     .brand {
       padding-right: 1.25rem;
-      border-right: 1px solid rgba(255, 255, 255, 0.28);
+      border-right: 1px solid color-mix(in srgb, var(--white) 28%, var(--transparent));
     }
 
     .desktop-tagline {
       display: inline;
       max-width: 25rem;
-      color: #d7d2d9;
+      color: var(--header-text-color);
       font-size: 0.875rem;
       line-height: 1.4;
     }

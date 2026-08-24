@@ -29,13 +29,13 @@
 
 <style>
   .preview-section.purple {
-    color: #ffffff;
-    background: var(--color-primary-700);
+    color: var(--white);
+    background: var(--primary-700);
   }
 
   .preview-section.light {
-    color: var(--color-text);
-    background: var(--color-background);
+    color: var(--text-color);
+    background: var(--background-color);
   }
 
   .preview-layout {
@@ -45,16 +45,16 @@
   }
 
   .purple :global(.label) {
-    color: var(--color-primary-200);
+    color: var(--primary-200);
   }
 
   .purple :global(.progress button) {
-    background: color-mix(in srgb, #ffffff 38%, transparent);
+    background: color-mix(in srgb, var(--white) 38%, var(--transparent));
   }
 
   .purple :global(.progress button.active) {
-    background: #ffffff;
-    box-shadow: 0 0 0 3px color-mix(in srgb, #ffffff 18%, transparent);
+    background: var(--white);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--white) 18%, var(--transparent));
   }
 
   .preview-copy {
@@ -76,7 +76,7 @@
 
   .purple .preview-copy .section-title,
   .purple .preview-copy p {
-    color: #ffffff;
+    color: var(--white);
   }
 
   .preview-copy p {

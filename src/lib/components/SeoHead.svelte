@@ -22,6 +22,7 @@
           url: logoUrl
         },
         email: 'mailto:contact.dandydancers@gmail.com',
+        telephone: '+5491155284015',
         foundingDate: '2026',
         founder: {
           '@type': 'Person',

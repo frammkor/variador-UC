@@ -56,9 +56,9 @@
     background:
       linear-gradient(
         90deg,
-        color-mix(in srgb, var(--color-primary-900) 78%, transparent) 0%,
-        color-mix(in srgb, var(--color-primary-900) 56%, transparent) 52%,
-        color-mix(in srgb, var(--color-primary-900) 32%, transparent) 100%
+        color-mix(in srgb, var(--primary-900) 78%, var(--transparent)) 0%,
+        color-mix(in srgb, var(--primary-900) 56%, var(--transparent)) 52%,
+        color-mix(in srgb, var(--primary-900) 32%, var(--transparent)) 100%
       ),
       url('/images/main-hero.webp') center / cover no-repeat;
   }
@@ -79,7 +79,7 @@
     max-width: 12ch;
     margin-bottom: 1.25rem;
     margin-inline: auto;
-    color: #ffffff;
+    color: var(--white);
     font-size: clamp(3rem, 13vw, 6.5rem);
     line-height: 0.95;
     letter-spacing: -0.055em;
@@ -89,7 +89,7 @@
     max-width: 38rem;
     margin-bottom: 1.75rem;
     margin-inline: auto;
-    color: rgba(255, 255, 255, 0.92);
+    color: color-mix(in srgb, var(--white) 92%, var(--transparent));
     line-height: 1.2rem;
   }
 
@@ -98,25 +98,25 @@
     margin: 0 0 0 0.25rem;
     padding: 0;
     border: 0;
-    color: #ffffff;
-    background: transparent;
+    color: var(--white);
+    background: var(--transparent);
     font: inherit;
     font-weight: 600;
     text-decoration: underline;
-    text-decoration-color: var(--color-primary-200);
+    text-decoration-color: var(--primary-200);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
-    text-shadow: 0 1px 0.4rem rgba(26, 6, 34, 0.75);
+    text-shadow: 0 1px 0.4rem color-mix(in srgb, var(--primary-900) 75%, var(--transparent));
     cursor: pointer;
   }
 
   .definition-trigger:hover {
-    color: var(--color-primary-100);
+    color: var(--primary-100);
   }
 
   .definition-trigger:focus-visible,
   .close:focus-visible {
-    outline: 3px solid var(--color-primary-200);
+    outline: 3px solid var(--primary-200);
     outline-offset: 3px;
   }
 
@@ -132,16 +132,16 @@
     padding: 0.8rem 1.25rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--primary-600);
     border-radius: 999px;
-    color: #ffffff;
-    background: var(--color-primary);
+    color: var(--white);
+    background: var(--primary-600);
     font-weight: 700;
     text-decoration: none;
   }
 
   .registration-link {
-    color: var(--color-primary-200);
+    color: var(--primary-200);
     font-size: 0.875rem;
     font-weight: 600;
     text-underline-offset: 0.2em;
@@ -152,15 +152,15 @@
     max-height: calc(100vh - 2rem);
     padding: 0;
     overflow: auto;
-    border: 1px solid var(--color-primary-200);
+    border: 1px solid var(--primary-200);
     border-radius: 1rem;
-    color: var(--color-text);
-    background: var(--color-background);
-    box-shadow: 0 1.5rem 4rem rgba(26, 6, 34, 0.28);
+    color: var(--text-color);
+    background: var(--background-color);
+    box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--primary-900) 28%, var(--transparent));
   }
 
   dialog::backdrop {
-    background: rgba(26, 6, 34, 0.68);
+    background: color-mix(in srgb, var(--primary-900) 68%, var(--transparent));
     backdrop-filter: blur(3px);
   }
 
@@ -178,7 +178,7 @@
 
   .modal-content > p {
     margin-bottom: 0;
-    color: var(--color-body);
+    color: var(--body-color);
     font-size: 1.0625rem;
     line-height: 1.5;
   }
@@ -193,14 +193,14 @@
     padding: 0;
     place-items: center;
     border: 0;
-    color: var(--color-heading);
-    background: transparent;
+    color: var(--heading-color);
+    background: var(--transparent);
     font-size: 1.5rem;
     cursor: pointer;
   }
 
   .close:hover {
-    color: var(--color-primary);
+    color: var(--primary-600);
   }
 
   @media (min-width: 55rem) {

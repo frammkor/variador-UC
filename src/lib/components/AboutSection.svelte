@@ -72,7 +72,7 @@
 
   .content {
     max-width: 40rem;
-    color: var(--color-body);
+    color: var(--body-color);
     font-size: 1.0625rem;
     line-height: 1.2rem;
   }
@@ -84,8 +84,8 @@
   .more-link {
     padding: 0;
     border: 0;
-    color: var(--color-primary-700);
-    background: transparent;
+    color: var(--primary-700);
+    background: var(--transparent);
     font: inherit;
     font-size: .875rem;
     font-weight: 600;
@@ -96,13 +96,13 @@
 
   .more-link:hover,
   .close:hover {
-    color: var(--color-primary);
+    color: var(--primary-600);
   }
 
   .more-link:focus-visible,
   .close:focus-visible,
   .profile-links a:focus-visible {
-    outline: 3px solid var(--color-primary-200);
+    outline: 3px solid var(--primary-200);
     outline-offset: 3px;
   }
 
@@ -111,15 +111,15 @@
     max-height: calc(100vh - 2rem);
     padding: 0;
     overflow: auto;
-    border: 1px solid var(--color-primary-200);
+    border: 1px solid var(--primary-200);
     border-radius: 1rem;
-    color: var(--color-text);
-    background: var(--color-background);
-    box-shadow: 0 1.5rem 4rem rgb(26 6 34 / 28%);
+    color: var(--text-color);
+    background: var(--background-color);
+    box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--primary-900) 28%, var(--transparent));
   }
 
   dialog::backdrop {
-    background: rgb(26 6 34 / 68%);
+    background: color-mix(in srgb, var(--primary-900) 68%, var(--transparent));
     backdrop-filter: blur(3px);
   }
 
@@ -136,7 +136,7 @@
 
   .modal-content > p {
     margin-bottom: 1.5rem;
-    color: var(--color-body);
+    color: var(--body-color);
     font-size: 1.0625rem;
     line-height: 1.35;
   }
@@ -148,7 +148,7 @@
   }
 
   .profile-links a {
-    color: var(--color-primary-700);
+    color: var(--primary-700);
     font-weight: 600;
     text-underline-offset: .2em;
   }
@@ -163,8 +163,8 @@
     padding: 0;
     place-items: center;
     border: 0;
-    color: var(--color-heading);
-    background: transparent;
+    color: var(--heading-color);
+    background: var(--transparent);
     font-size: 1.5rem;
     cursor: pointer;
   }

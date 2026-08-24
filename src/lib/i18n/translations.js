@@ -180,9 +180,17 @@ export const translations = {
         ]
       }
     },
+    testimonials: {
+      eyebrow: 'Testimonials',
+      titleStart: 'More than a dance—',
+      titleHighlight: 'a shared moment.',
+      placeholderLabel: 'Sample testimonial',
+      carouselLabel: 'Testimonial slides'
+    },
     footer: {
-      phrase: 'More than a dance—a shared moment.',
-      socialLinks: 'Social media and contact links',
+      navigationTitle: 'Explore',
+      navigationLabel: 'Main page sections',
+      socialTitle: 'Follow us',
       whatsappMessage: 'Hi, I am interested in the taxi dancer service.'
     }
   },
@@ -367,9 +375,17 @@ export const translations = {
         ]
       }
     },
+    testimonials: {
+      eyebrow: 'Testimonios',
+      titleStart: 'Más que un baile:',
+      titleHighlight: 'un momento compartido.',
+      placeholderLabel: 'Testimonio de muestra',
+      carouselLabel: 'Carrusel de testimonios'
+    },
     footer: {
-      phrase: 'Más que un baile: un momento compartido.',
-      socialLinks: 'Redes sociales y enlaces de contacto',
+      navigationTitle: 'Explorá',
+      navigationLabel: 'Secciones de la página principal',
+      socialTitle: 'Seguinos',
       whatsappMessage: 'Hola, me interesa el servicio de taxi dancers.'
     }
   }

@@ -27,23 +27,23 @@
     width: 3.75rem;
     height: 3.75rem;
     place-items: center;
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    border: 2px solid color-mix(in srgb, var(--white) 90%, var(--transparent));
     border-radius: 50%;
-    color: #ffffff;
-    background: #25d366;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.22);
+    color: var(--white);
+    background: var(--whatsapp-500);
+    box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--black) 22%, var(--transparent));
     transition:
       background-color 150ms ease,
       transform 150ms ease;
   }
 
   .whatsapp-button:hover {
-    background: #1ebe5d;
+    background: var(--whatsapp-600);
     transform: translateY(-2px);
   }
 
   .whatsapp-button:focus-visible {
-    outline: 3px solid var(--color-primary-200);
+    outline: 3px solid var(--primary-200);
     outline-offset: 3px;
   }
 
