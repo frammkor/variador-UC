@@ -130,12 +130,36 @@ export const translations = {
         intro: 'Find clear opportunities in one place and choose what fits your schedule.',
         cta: 'I want to join!',
         items: [
-          { title: 'Find real opportunities', description: 'Meet people already looking for a taxi dancer.' },
-          { title: 'Keep everything together', description: 'Stop chasing work across chats, groups, and social media.' },
-          { title: 'Organize your schedule', description: 'See requests by day and time before committing.' },
-          { title: 'Know who you’ll dance with', description: 'Review their profile, dance level, and plan for the night.' },
-          { title: 'Show your experience', description: 'A professional profile gives your work more visibility.' },
-          { title: 'Stay in control', description: 'Choose when, where, and with whom you want to dance.' }
+          {
+            title: 'Find more work',
+            description:
+              'Connect with people in the community who are already looking for a taxi dancer. We work to bring you frequent opportunities so you can choose the ones that suit you best.'
+          },
+          {
+            title: 'Your rate is 100% yours',
+            description:
+              'Set the value of your work without intermediaries taking a cut of your fee. Dandy Dancers does not deduct anything from it: the person pays the service charge separately when confirming the booking.'
+          },
+          {
+            title: 'Everything in one place',
+            description:
+              'Find in one place the opportunities that currently circulate through chats, groups, and social media. Review each request and sign up without chasing conversations.'
+          },
+          {
+            title: 'Choose freely',
+            description:
+              'Decide when, where, and with whom you want to dance. Before signing up, review the person’s profile and the plans for the night so you can comfortably choose whom you want to embrace.'
+          },
+          {
+            title: 'Make your experience count',
+            description:
+              'Show your experience, style, and professional journey. Build your reputation on Dandy Dancers so new people can discover and choose you.'
+          },
+          {
+            title: 'No unnecessary back-and-forth',
+            description:
+              'Once you are selected, you receive the agreed date, time, location, duration, and conditions. If anything changes, we let you know so you do not have to chase information.'
+          }
         ]
       },
       previewSection: {
@@ -158,6 +182,8 @@ export const translations = {
         date: 'Date',
         meetingTime: 'Meeting time',
         duration: 'Duration',
+        paymentTotal: 'You receive after the job',
+        perHour: 'per hour',
         dancingSince: 'Dancing since',
         favoriteOrchestra: 'Favorite orchestra',
         profile: { name: 'Sophie', level: 'Beginner', since: '2024', nationality: 'French', role: 'Follower', orchestra: 'Osvaldo Pugliese', bio: 'Discovering Buenos Aires tango with curiosity and joy.' },
@@ -367,12 +393,36 @@ export const translations = {
         intro: 'Encontrá propuestas claras en un solo lugar y elegí las que encajen con tu agenda.',
         cta: '¡Quiero sumarme!',
         items: [
-          { title: 'Encontrá oportunidades reales', description: 'Conocé personas que ya buscan un taxi dancer.' },
-          { title: 'Tené todo en un solo lugar', description: 'Dejá de perseguir trabajos entre chats, grupos y redes.' },
-          { title: 'Ordená tu agenda', description: 'Mirá las búsquedas por día y hora antes de comprometerte.' },
-          { title: 'Sabé con quién vas a bailar', description: 'Revisá su perfil, nivel y plan para la noche.' },
-          { title: 'Mostrá tu experiencia', description: 'Un perfil profesional le da más visibilidad a tu trabajo.' },
-          { title: 'Elegí con libertad', description: 'Decidí cuándo, dónde y con quién querés bailar.' }
+          {
+            title: 'Conseguí más trabajos',
+            description:
+              'Conectá con personas de la comunidad que ya están buscando un taxi dancer. Trabajamos para acercarte oportunidades con frecuencia, para que elijas las que mejor encajen con vos.'
+          },
+          {
+            title: 'Tu tarifa es 100% tuya',
+            description:
+              'Definí cuánto vale tu trabajo sin intermediarios que recorten tu caché. Dandy Dancers no descuenta nada de tu tarifa: la persona paga por separado el cargo del servicio al confirmar la reserva.'
+          },
+          {
+            title: 'Todo en un solo lugar',
+            description:
+              'Encontrá en un solo lugar las oportunidades que hoy circulan entre chats, grupos y redes. Revisá cada búsqueda y anotate sin perseguir conversaciones.'
+          },
+          {
+            title: 'Elegí con libertad',
+            description:
+              'Decidí cuándo, dónde y con quién querés bailar. Antes de anotarte, revisá el perfil de la persona y las condiciones de la noche para elegir con tranquilidad a quién querés abrazar.'
+          },
+          {
+            title: 'Hacé valer tu trayectoria',
+            description:
+              'Mostrá tu experiencia, tu estilo y tu recorrido profesional. Construí una reputación dentro de Dandy Dancers para que nuevas personas puedan conocerte y elegirte.'
+          },
+          {
+            title: 'Sin idas y vueltas',
+            description:
+              'Una vez que fuiste elegido, recibís el día, la hora, el lugar, la duración y las condiciones acordadas. Si algo cambia, te avisamos para que no tengas que perseguir información.'
+          }
         ]
       },
       previewSection: {
@@ -395,6 +445,8 @@ export const translations = {
         date: 'Fecha',
         meetingTime: 'Encuentro',
         duration: 'Duración',
+        paymentTotal: 'Recibís al finalizar',
+        perHour: 'por hora',
         dancingSince: 'Baila desde',
         favoriteOrchestra: 'Orquesta favorita',
         profile: { name: 'Sophie', level: 'Principiante', since: '2024', nationality: 'Francesa', role: 'Seguidora', orchestra: 'Osvaldo Pugliese', bio: 'Descubriendo el tango de Buenos Aires con curiosidad y alegría.' },

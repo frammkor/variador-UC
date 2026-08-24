@@ -3,11 +3,11 @@
 
   let { copy, activeStep = $bindable(0) } = $props();
   const searches = [
-    { dayGroup: 0, day: '24', month: 'OCT', time: '21:30', duration: 2, venue: 'Salón Canning', location: 'Palermo', peopleCount: 1, rating: '4.9', image: '/images/cu-ia-01.webp' },
-    { dayGroup: 0, day: '24', month: 'OCT', time: '22:00', duration: 3, venue: 'Salón Canning', location: 'Palermo', peopleCount: 2, rating: '4.8', image: '/images/cu-ia-02.webp' },
-    { dayGroup: 1, day: '25', month: 'OCT', time: '20:30', duration: 2, venue: 'El Beso', location: 'Balvanera', peopleCount: 1, rating: '4.7', image: '/images/cu-ia-04.webp' },
-    { dayGroup: 1, day: '25', month: 'OCT', time: '23:30', duration: 2, venue: 'La Viruta', location: 'Palermo', peopleCount: 1, rating: '5.0', image: '/images/cu-ia-03.webp' },
-    { dayGroup: 2, day: '26', month: 'OCT', time: '22:30', duration: 3, venue: 'Marabú', location: 'San Nicolás', peopleCount: 2, rating: '4.9', image: '/images/cu-ia-05.webp' }
+    { dayGroup: 0, day: '24', month: 'OCT', time: '21:30', duration: 2, hourlyRate: 30, venue: 'Salón Canning', location: 'Palermo', peopleCount: 1, rating: '4.9', image: '/images/cu-ia-01.webp' },
+    { dayGroup: 0, day: '24', month: 'OCT', time: '22:00', duration: 3, hourlyRate: 30, venue: 'Salón Canning', location: 'Palermo', peopleCount: 2, rating: '4.8', image: '/images/cu-ia-02.webp' },
+    { dayGroup: 1, day: '25', month: 'OCT', time: '20:30', duration: 2, hourlyRate: 30, venue: 'El Beso', location: 'Balvanera', peopleCount: 1, rating: '4.7', image: '/images/cu-ia-04.webp' },
+    { dayGroup: 1, day: '25', month: 'OCT', time: '23:30', duration: 2, hourlyRate: 30, venue: 'La Viruta', location: 'Palermo', peopleCount: 1, rating: '5.0', image: '/images/cu-ia-03.webp' },
+    { dayGroup: 2, day: '26', month: 'OCT', time: '22:30', duration: 3, hourlyRate: 30, venue: 'Marabú', location: 'San Nicolás', peopleCount: 2, rating: '4.9', image: '/images/cu-ia-05.webp' }
   ];
   const search = searches[1];
   let pointerStartX = 0;
@@ -114,6 +114,11 @@
             <div><dt>{copy.duration}</dt><dd>{search.duration} h</dd></div>
             <div><dt>{copy.milonga}</dt><dd>{search.venue}</dd></div>
           </dl>
+
+          <div class="payment-summary">
+            <span><small>{copy.paymentTotal}</small><strong>US$ {search.hourlyRate * search.duration}</strong></span>
+            <small>US$ {search.hourlyRate} {copy.perHour} × {search.duration} h</small>
+          </div>
         </div>
         <span class="continue">{copy.apply} <span>→</span></span>
       {:else}
@@ -170,6 +175,10 @@
   dl div { display: flex; padding: .4rem; flex-direction: column; border-radius: .45rem; background: color-mix(in srgb, var(--white) 72%, var(--transparent)); font-size: .55rem; }
   dt { color: var(--gray-500); }
   dd { margin: 0; color: var(--gray-700); font-weight: 700; }
+  .payment-summary { display: flex; padding: .55rem .65rem; align-items: center; justify-content: space-between; gap: .5rem; border: 1px solid var(--primary-200); border-radius: .6rem; background: var(--white); }
+  .payment-summary > span { display: flex; flex-direction: column; }
+  .payment-summary small { color: var(--gray-500); font-size: .5rem; line-height: 1.3; }
+  .payment-summary strong { color: var(--primary-700); font-size: .88rem; line-height: 1.15; }
   .continue { display: flex; width: 100%; flex: 0 0 auto; box-sizing: border-box; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border-radius: .7rem; color: var(--white); background: var(--primary-600); font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px color-mix(in srgb, var(--primary-600) 24%, var(--transparent)); }
   .success { display: flex; height: 100%; align-items: center; justify-content: center; flex-direction: column; text-align: center; }
   .success-mark { display: grid; width: 4rem; height: 4rem; margin-bottom: 1.2rem; place-items: center; border-radius: 50%; color: var(--white); background: linear-gradient(145deg, var(--primary-500), var(--primary-800)); box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-600) 28%, var(--transparent)); font-size: 2rem; }
