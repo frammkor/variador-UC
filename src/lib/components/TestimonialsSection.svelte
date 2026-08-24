@@ -1,12 +1,5 @@
 <script>
   let { copy, ctaLabel, ctaHref } = $props();
-
-  const testimonials = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa.'
-  ];
 </script>
 
 <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
@@ -21,11 +14,14 @@
     <div class="track">
       {#each [true, false, true] as duplicate}
         <div class="testimonial-list" aria-hidden={duplicate ? 'true' : undefined}>
-          {#each testimonials as testimonial}
+          {#each copy.items as testimonial}
             <blockquote class="testimonial-card">
               <span class="quote-mark" aria-hidden="true">“</span>
-              <p>{testimonial}</p>
-              <div class="testimonial-meta">{copy.placeholderLabel}</div>
+              <p>{testimonial.quote}</p>
+              <div class="testimonial-meta">
+                <strong>{testimonial.name}</strong>
+                <span>{copy.placeholderLabel}</span>
+              </div>
             </blockquote>
           {/each}
         </div>
@@ -106,8 +102,11 @@
   }
 
   .testimonial-meta {
+    display: flex;
     margin-top: auto;
     padding-top: 1rem;
+    flex-direction: column;
+    gap: .2rem;
     border-top: 1px solid var(--primary-100);
     color: var(--muted-color);
     font-size: .72rem;
@@ -115,6 +114,9 @@
     letter-spacing: .06em;
     text-transform: uppercase;
   }
+
+  .testimonial-meta strong { color: var(--gray-700); font-size: .8rem; }
+  .testimonial-meta span { color: var(--gray-500); font-size: .6rem; }
 
   .actions { display: flex; justify-content: center; }
   .cta {

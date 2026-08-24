@@ -244,8 +244,30 @@ export const translations = {
       eyebrow: 'Testimonials',
       titleStart: 'More than a dance—',
       titleHighlight: 'a shared moment.',
-      placeholderLabel: 'Sample testimonial',
-      carouselLabel: 'Testimonial slides'
+      placeholderLabel: 'Taxi dancer customer',
+      carouselLabel: 'Testimonial slides',
+      items: [
+        {
+          name: 'Katharina',
+          quote: 'I only had a few nights in Buenos Aires and didn’t want to spend them waiting to be invited. My dancer made me feel comfortable from the moment we arrived, explained how the milonga worked, and helped me enjoy every tanda.'
+        },
+        {
+          name: 'Elena',
+          quote: 'Going to a milonga alone in Buenos Aires felt intimidating as some milongas have strict rules. The taxi dancer made me feel comfortable, and I could relax, dance, and feel part of the community instead of feeling like an outsider.'
+        },
+        {
+          name: 'Elliot',
+          quote: 'I’m still improving my tango, so I was worried that I wouldn’t be experienced enough for the milongas in Buenos Aires. My dancer adapted to my level, gave me confidence, and made every dance feel enjoyable rather than stressful.'
+        },
+        {
+          name: 'Karen',
+          quote: 'Sharing a class with a professional partner made a huge difference. They helped me understand the teacher’s instructions, practice the movements correctly, and then try what I had learned in a real milonga. It was specially helpful as my Spanish is not very good yet and all classes are in Spanish.'
+        },
+        {
+          name: 'Alessandra',
+          quote: 'I wanted more than someone to dance with—I wanted to understand the culture around tango in Buenos Aires. My dancer introduced me to the local customs, answered my questions, and helped me experience the milonga in a much more authentic way. I got to meet their friends and share the Argentinian culture.'
+        }
+      ]
     },
     footer: {
       navigationTitle: 'Explore',
@@ -507,8 +529,30 @@ export const translations = {
       eyebrow: 'Testimonios',
       titleStart: 'Más que un baile:',
       titleHighlight: 'un momento compartido.',
-      placeholderLabel: 'Testimonio de muestra',
-      carouselLabel: 'Carrusel de testimonios'
+      placeholderLabel: 'Nombre provisional',
+      carouselLabel: 'Carrusel de testimonios',
+      items: [
+        {
+          name: 'Claire M.',
+          quote: 'Solo tenía unas pocas noches en Buenos Aires y no quería pasarlas esperando una invitación. Mi bailarín me hizo sentir a gusto desde que llegamos, me explicó cómo funcionaba la milonga y me ayudó a disfrutar cada tanda.'
+        },
+        {
+          name: 'Sophie L.',
+          quote: 'Ir a una milonga sin compañía en una ciudad nueva me resultaba intimidante. Tener a alguien confiable a mi lado eliminó esa incertidumbre. Pude relajarme, bailar y sentirme parte de la comunidad tanguera local en lugar de sentir que no pertenecía.'
+        },
+        {
+          name: 'Emma R.',
+          quote: 'Todavía estoy mejorando mi tango y me preocupaba no tener suficiente experiencia para las milongas de Buenos Aires. Mi bailarín se adaptó a mi nivel, me dio confianza e hizo que cada baile fuera disfrutable en lugar de estresante.'
+        },
+        {
+          name: 'Anna K.',
+          quote: 'Compartir una clase con una pareja profesional hizo una enorme diferencia. Me ayudó a entender las indicaciones del profesor, practicar correctamente los movimientos y después probar lo aprendido en una milonga real.'
+        },
+        {
+          name: 'Laura D.',
+          quote: 'Buscaba algo más que alguien con quien bailar: quería entender la cultura del tango en Buenos Aires. Mi bailarín me mostró las costumbres locales, respondió mis preguntas y me ayudó a vivir la milonga de una manera mucho más auténtica.'
+        }
+      ]
     },
     footer: {
       navigationTitle: 'Explorá',
