@@ -1,7 +1,7 @@
 <script>
   import { getWhatsAppHref } from '$lib/config.js';
 
-  let { copy, links = [], homeHref = './' } = $props();
+  let { copy, links = [], legalLinks = [], homeHref = './' } = $props();
   const whatsappHref = $derived(getWhatsAppHref(copy.whatsappMessage));
 </script>
 
@@ -43,6 +43,11 @@
 
   <div class="container footer-bottom">
     <p>© 2026 Dandy Dancers</p>
+    <nav class="legal-links" aria-label={copy.legalLabel}>
+      {#each legalLinks as link}
+        <a href={link.href}>{link.label}</a>
+      {/each}
+    </nav>
   </div>
 </footer>
 
@@ -65,10 +70,13 @@
   .social-icon .fill { fill: currentColor; stroke: none; }
   a:hover { color: var(--white); }
   a:focus-visible { border-radius: .25rem; outline: 2px solid var(--primary-200); outline-offset: 3px; }
-  .footer-bottom { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid color-mix(in srgb, var(--white) 12%, var(--transparent)); }
+  .footer-bottom { display: flex; margin-top: 3rem; padding-top: 1.25rem; align-items: flex-start; justify-content: space-between; flex-direction: column; gap: 1rem; border-top: 1px solid color-mix(in srgb, var(--white) 12%, var(--transparent)); }
   .footer-bottom p { margin: 0; color: color-mix(in srgb, var(--white) 48%, var(--transparent)); font-size: .72rem; }
+  .legal-links { display: flex; flex-wrap: wrap; gap: .65rem 1.25rem; }
+  .legal-links a { color: color-mix(in srgb, var(--white) 68%, var(--transparent)); font-size: .75rem; text-decoration: none; }
 
   @media (min-width: 48rem) {
     .footer-grid { grid-template-columns: minmax(16rem, 1.35fr) minmax(11rem, .8fr) minmax(11rem, .8fr); align-items: start; gap: clamp(2rem, 6vw, 6rem); }
+    .footer-bottom { align-items: center; flex-direction: row; }
   }
 </style>

@@ -105,7 +105,7 @@ export const translations = {
       eyebrow: 'Behind the project',
       title: 'About the founder',
       description:
-        'Dandy Dancers is an independent project founded to make tango experiences in Buenos Aires easier to access, more comfortable, and more memorable.',
+        'Franco Cespi is a programmer born in Buenos Aires, Argentina, with more than 15 years of experience in the world of tango. Coming from a tango family, he began dancing at a very young age and brought together the two worlds he is most passionate about: milonguero-style dancing and software.',
       moreLink: 'More about Franco',
       modalTitle: 'Meet Franco Cespi',
       modalDescription:
@@ -120,7 +120,7 @@ export const translations = {
       metaTitle: 'Register as a Taxi Dancer — Dandy Dancers',
       metaDescription: 'Apply to join the Dandy Dancers team of taxi dancers.',
       paragraphs: [
-        'Complete the form so we can get to know you a little better and evaluate your profile.',
+        'Complete the form so we can get to know you a little better.',
         'If your profile matches what we are looking for, we will contact you to tell you about the next steps.'
       ],
       cta: 'I want to join!',
@@ -168,15 +168,49 @@ export const translations = {
       comparison: {
         eyebrow: 'A better way to work',
         title: 'Value your embrace',
-        intro: 'Combine the control of working independently with the speed of an intermediary.',
+        intro: 'The perfect tool for working independently.',
         carouselLabel: 'Comparison topics',
         swipeHint: 'Swipe to see more',
-        columns: { solo: 'On your own', intermediary: 'With an intermediary', dandy: 'With Dandy Dancers' },
+        columns: { solo: 'On your own', intermediary: 'With others', dandy: 'With Dandy Dancers' },
         items: [
-          { title: 'Your rate', solo: 'You negotiate it.', intermediary: 'They set it.', dandy: 'You set it.' },
+          { title: 'Your rate', solo: 'You negotiate it.', intermediary: 'They set it for you.', dandy: 'You set it.' },
           { title: 'Your time', solo: 'Coordinating everything takes time.', intermediary: 'You delegate, but lose control.', dandy: 'See what’s available and sign up in seconds.' },
           { title: 'Confirming the job', solo: 'Messages and manual follow-up.', intermediary: 'Back-and-forth through a third party.', dandy: 'We tell you when and where.' },
           { title: 'Who you dance with', solo: 'You depend on your network.', intermediary: 'You depend on others.', dandy: 'You choose.' }
+        ]
+      },
+      faq: {
+        eyebrow: 'FAQs',
+        title: 'Frequently asked questions',
+        items: [
+          {
+            question: 'How does Dandy Dancers work for dancers?',
+            answer: 'Browse requests organized by day and time, review the details, and mark yourself available for the ones that interest you. The person chooses from the available dancers, and we notify you if you are selected.'
+          },
+          {
+            question: 'Does marking myself available confirm the job?',
+            answer: 'No. It lets the person know you are available. The job is confirmed only if they choose you, and we then send you the final details.'
+          },
+          {
+            question: 'Do I have to enter my availability in advance?',
+            answer: 'No. You see requests ordered by day and time and choose the ones that fit your schedule.'
+          },
+          {
+            question: 'What information can I see before making myself available?',
+            answer: 'You can review the milonga, date, meeting time, duration, number of people, profile information, rating, and service conditions before deciding.'
+          },
+          {
+            question: 'Who sets my hourly rate?',
+            answer: 'You do. Your rate is shown with the duration and conditions of the request, so everything is clear before you commit.'
+          },
+          {
+            question: 'Can I mark myself available for more than one request?',
+            answer: 'Yes. You can put yourself forward for as many jobs as you want. If any of them overlap and someone chooses you, we automatically remove you from the other requests so you do not have to worry about a thing.'
+          },
+          {
+            question: 'What happens if the milonga changes venue or is cancelled?',
+            answer: 'We notify you of the change. If the venue changes, you receive the updated information. If the event is cancelled, we help manage rescheduling or cancellation according to the service conditions.'
+          }
         ]
       }
     },
@@ -191,7 +225,15 @@ export const translations = {
       navigationTitle: 'Explore',
       navigationLabel: 'Main page sections',
       socialTitle: 'Follow us',
+      legalLabel: 'Legal information',
       whatsappMessage: 'Hi, I am interested in the taxi dancer service.'
+    },
+    legal: {
+      eyebrow: 'Legal',
+      comingSoon: 'Content coming soon.',
+      terms: { title: 'Terms of service' },
+      privacy: { title: 'Privacy policy' },
+      cookies: { title: 'Cookies policy' }
     }
   },
   es: {
@@ -239,11 +281,11 @@ export const translations = {
           description: 'Mirá lo fácil que es.'
         },
         {
-          title: 'Elegí al bailarín ideal para tu noche',
+          title: 'Elegí al bailarín ideal para tu tango',
           description: 'Explorá los bailarines disponibles y elegí al Dandy que quieras.'
         },
         {
-          title: 'Tu noche asegurada',
+          title: 'Tu experiencia asegurada',
           description: 'Estás en buenas manos. Vos disfrutá de la milonga.'
         }
       ]
@@ -300,7 +342,7 @@ export const translations = {
       eyebrow: 'Detrás del proyecto',
       title: 'Sobre el fundador',
       description:
-        'Dandy Dancers es un proyecto independiente creado para hacer que las experiencias de tango en Buenos Aires sean más accesibles, cómodas y memorables.',
+        'Franco Cespi es un programador nacido en Buenos Aires, Argentina, con una trayectoria de más de 15 años en el mundo del tango. Viniendo de familia tanguera, empezó a bailar desde muy chico y logró unir los dos mundos que más le apasionan: el baile milonguero y el software.',
       moreLink: 'Más sobre Franco',
       modalTitle: 'Conocé a Franco Cespi',
       modalDescription:
@@ -315,7 +357,7 @@ export const translations = {
       metaTitle: 'Registrate como taxi dancer — Dandy Dancers',
       metaDescription: 'Postulate para formar parte del plantel de taxi dancers de Dandy Dancers.',
       paragraphs: [
-        'Completá el formulario para que podamos conocerte un poco más y evaluar tu perfil.',
+        'Completá el formulario para que podamos conocerte un poco más.',
         'Si tu perfil encaja con lo que estamos buscando, nos vamos a poner en contacto con vos para contarte los próximos pasos.'
       ],
       cta: '¡Quiero sumarme!',
@@ -363,15 +405,49 @@ export const translations = {
       comparison: {
         eyebrow: 'Otra forma de trabajar',
         title: 'Tu abrazo vale',
-        intro: 'Combiná el control de trabajar por tu cuenta con la agilidad de un intermediario.',
+        intro: 'La herramienta perfecta para trabajar por tu cuenta.',
         carouselLabel: 'Temas de comparación',
         swipeHint: 'Deslizá para ver más',
-        columns: { solo: 'Por tu cuenta', intermediary: 'Con intermediario', dandy: 'Con Dandy Dancers' },
+        columns: { solo: 'Por tu cuenta', intermediary: 'Con otros', dandy: 'Con Dandy Dancers' },
         items: [
-          { title: 'Tu tarifa', solo: 'La negociás.', intermediary: 'La definen.', dandy: 'La definís vos.' },
+          { title: 'Tu tarifa', solo: 'La negociás.', intermediary: 'La definen por vos.', dandy: 'La definís vos.' },
           { title: 'Tu tiempo', solo: 'Coordinar todo lleva tiempo.', intermediary: 'Delegás, pero perdés el control.', dandy: 'Ves qué hay y te anotás en segundos.' },
           { title: 'Cerrar el trabajo', solo: 'Mensajes y seguimiento manual.', intermediary: 'Idas y vueltas con un tercero.', dandy: 'Te avisamos cuándo y dónde.' },
           { title: 'Con quién bailás', solo: 'Dependés de tu red.', intermediary: 'Dependés de otros.', dandy: 'Vos elegís.' }
+        ]
+      },
+      faq: {
+        eyebrow: 'Preguntas frecuentes',
+        title: 'Lo que necesitás saber',
+        items: [
+          {
+            question: '¿Cómo funciona Dandy Dancers para los bailarines?',
+            answer: 'Explorás búsquedas ordenadas por día y hora, revisás los detalles y te anotás en las que te interesan. La persona elige entre los bailarines disponibles y te avisamos si fuiste elegido.'
+          },
+          {
+            question: '¿Anotarme significa que el trabajo ya está confirmado?',
+            answer: 'No. Anotarte le avisa a la persona que estás disponible. El trabajo se confirma sólo si te elige y, en ese momento, te enviamos los detalles finales.'
+          },
+          {
+            question: '¿Tengo que cargar mi disponibilidad por adelantado?',
+            answer: 'No. Ves las búsquedas ordenadas por día y hora y elegís las que encajan con tu agenda.'
+          },
+          {
+            question: '¿Qué información veo antes de anotarme?',
+            answer: 'Podés revisar la milonga, la fecha, la hora de encuentro, la duración, la cantidad de personas, la información del perfil, su puntuación y las condiciones del servicio antes de decidir.'
+          },
+          {
+            question: '¿Quién define mi tarifa por hora?',
+            answer: 'Vos. Tu tarifa se muestra junto con la duración y las condiciones de la búsqueda, para que todo quede claro antes de comprometerte.'
+          },
+          {
+            question: '¿Puedo anotarme en más de una búsqueda?',
+            answer: 'Sí, podés anotarte a todos los trabajos que quieras. Si alguno se superpone y una persona te elige, te damos de baja automáticamente de las otras búsquedas para que no tengas que preocuparte por nada.'
+          },
+          {
+            question: '¿Qué pasa si la milonga cambia de lugar o se cancela?',
+            answer: 'Te avisamos del cambio. Si cambia la dirección, recibís la información actualizada. Si se cancela, te ayudamos a gestionar la reprogramación o cancelación según las condiciones del servicio.'
+          }
         ]
       }
     },
@@ -386,7 +462,15 @@ export const translations = {
       navigationTitle: 'Explorá',
       navigationLabel: 'Secciones de la página principal',
       socialTitle: 'Seguinos',
+      legalLabel: 'Información legal',
       whatsappMessage: 'Hola, me interesa el servicio de taxi dancers.'
+    },
+    legal: {
+      eyebrow: 'Legal',
+      comingSoon: 'Contenido disponible próximamente.',
+      terms: { title: 'Términos del servicio' },
+      privacy: { title: 'Política de privacidad' },
+      cookies: { title: 'Política de cookies' }
     }
   }
 };

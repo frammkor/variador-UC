@@ -15,11 +15,18 @@
   let { language } = $props();
   const copy = $derived(getTranslations(language));
   const whatsappHref = getWhatsAppHref(taxiDancerInquiryMessage);
+  const registrationHref = $derived(`/${language}/taxi-dancer-registration/`);
   const footerLinks = $derived([
     { href: '#why', label: copy.why.eyebrow },
     { href: '#dancers', label: copy.dancers.eyebrow },
     { href: '#testimonials', label: copy.testimonials.eyebrow },
-    { href: '#about', label: copy.about.eyebrow }
+    { href: '#about', label: copy.about.eyebrow },
+    { href: registrationHref, label: copy.hero.registrationCta }
+  ]);
+  const legalLinks = $derived([
+    { href: './terms-of-service/', label: copy.legal.terms.title },
+    { href: './privacy-policy/', label: copy.legal.privacy.title },
+    { href: './cookies-policy/', label: copy.legal.cookies.title }
   ]);
 </script>
 
@@ -35,7 +42,7 @@
   <HeroSection
     copy={copy.hero}
     modalCopy={copy.taxiDancer}
-    registrationHref="./taxi-dancer-registration/"
+    {registrationHref}
   />
   <WhySection copy={copy.why} ctaHref={whatsappHref} ctaExternal />
   <AppPreviewSection
@@ -45,9 +52,9 @@
   />
   <DancersCarouselSection
     copy={copy.dancers}
-    registrationHref="./taxi-dancer-registration/"
+    {registrationHref}
   />
   <TestimonialsSection copy={copy.testimonials} ctaLabel={copy.hero.cta} ctaHref={whatsappHref} />
   <AboutSection copy={copy.about} />
 </main>
-<SiteFooter copy={copy.footer} links={footerLinks} homeHref="./" />
+<SiteFooter copy={copy.footer} links={footerLinks} {legalLinks} homeHref="./" />

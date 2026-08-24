@@ -19,7 +19,7 @@
 
   <div class="carousel" aria-label={copy.carouselLabel}>
     <div class="track">
-      {#each [false, true] as duplicate}
+      {#each [true, false, true] as duplicate}
         <div class="testimonial-list" aria-hidden={duplicate ? 'true' : undefined}>
           {#each testimonials as testimonial}
             <blockquote class="testimonial-card">
@@ -74,7 +74,7 @@
   }
 
   .track { display: flex; width: max-content; animation: marquee 65s linear infinite; will-change: transform; }
-  .testimonial-list { display: flex; gap: 1.5rem; padding-right: 1.5rem; }
+  .testimonial-list { display: flex; flex: 0 0 auto; gap: 1.5rem; padding-right: 1.5rem; }
 
   .testimonial-card {
     position: relative;
@@ -133,7 +133,8 @@
   }
 
   @keyframes marquee {
-    to { transform: translateX(-50%); }
+    from { transform: translateX(-33.333333%); }
+    to { transform: translateX(-66.666667%); }
   }
 
   @media (min-width: 48rem) {

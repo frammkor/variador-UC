@@ -7,6 +7,7 @@
   import TaxiRegistrationPreview from '$lib/components/TaxiRegistrationPreview.svelte';
   import WhySection from '$lib/components/WhySection.svelte';
   import TaxiDancerComparison from '$lib/components/TaxiDancerComparison.svelte';
+  import FaqSection from '$lib/components/FaqSection.svelte';
 
   let { language } = $props();
   const copy = $derived(getTranslations(language));
@@ -14,7 +15,14 @@
     { href: '../#why', label: copy.why.eyebrow },
     { href: '../#dancers', label: copy.dancers.eyebrow },
     { href: '../#testimonials', label: copy.testimonials.eyebrow },
-    { href: '../#about', label: copy.about.eyebrow }
+    { href: '../#about', label: copy.about.eyebrow },
+    { href: '#faq', label: copy.registration.faq.eyebrow },
+    { href: `/${language}/taxi-dancer-registration/`, label: copy.hero.registrationCta }
+  ]);
+  const legalLinks = $derived([
+    { href: '../terms-of-service/', label: copy.legal.terms.title },
+    { href: '../privacy-policy/', label: copy.legal.privacy.title },
+    { href: '../cookies-policy/', label: copy.legal.cookies.title }
   ]);
 </script>
 
@@ -66,7 +74,9 @@
   ctaLabel={copy.registration.cta}
 />
 
-<SiteFooter copy={copy.footer} links={footerLinks} homeHref="../" />
+<FaqSection copy={copy.registration.faq} />
+
+<SiteFooter copy={copy.footer} links={footerLinks} {legalLinks} homeHref="../" />
 
 <style>
   main {

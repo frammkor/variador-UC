@@ -19,14 +19,16 @@
 
 <section class="section" id="about">
   <div class="container about-layout">
-    <img
-      class="portrait"
-      src="/images/franco-cespi.webp"
-      alt="Franco Cespi, Dandy Dancers Founder"
-      width="720"
-      height="720"
-      loading="lazy"
-    />
+    <div class="portrait-frame">
+      <img
+        class="portrait"
+        src="/images/franco-cespi.webp"
+        alt="Franco Cespi, Dandy Dancers Founder"
+        width="720"
+        height="720"
+        loading="lazy"
+      />
+    </div>
     <div class="content">
       <p class="eyebrow">{copy.eyebrow}</p>
       <h2 class="section-title">{copy.title}</h2>
@@ -58,12 +60,31 @@
     text-align: center;
   }
 
-  .portrait {
-    width: min(100%, 18rem);
+  .portrait-frame {
+    position: relative;
+    width: min(100%, 15rem);
     aspect-ratio: 1;
-    height: auto;
+    border: 3px solid var(--primary-500);
     border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .portrait-frame::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: var(--primary-500);
+    mix-blend-mode: color;
+    opacity: .18;
+    pointer-events: none;
+  }
+
+  .portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    filter: sepia(.1) saturate(.96) hue-rotate(225deg);
   }
 
   .about-layout :global(.section-title) {
