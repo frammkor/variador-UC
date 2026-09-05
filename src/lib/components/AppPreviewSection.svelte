@@ -30,7 +30,7 @@
 <style>
   .preview-section.purple {
     color: var(--white);
-    background: var(--primary-700);
+    background: var(--primary-500);
   }
 
   .preview-section.light {

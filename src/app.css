@@ -1,14 +1,16 @@
 :root {
   /* Brand palette */
-  --primary-50: rgb(142 76 171 / 5%);
-  --primary-100: rgb(142 76 171 / 10%);
-  --primary-200: #e9d5ff;
-  --primary-400: #c084fc;
-  --primary-500: #a855f7;
-  --primary-600: #8e4cab;
-  --primary-700: #904cac;
-  --primary-800: #6d28d9;
-  --primary-900: #1a0622;
+  --primary-25: #FBF3FE;
+  --primary-50: #F8EAFD;
+  --primary-100: #F5E2FC;
+  --primary-200: #EED0FA;
+  --primary-300: #D5B2E2;
+  --primary-400: #BC85D2;
+  --primary-500: #904CAC;
+  --primary-600: #7F498D;
+  --primary-700: #714674;
+  --primary-800: #432371;
+  --primary-900: #1A0622;
 
   /* Gray palette */
   --white: #ffffff;
@@ -132,7 +134,7 @@ p {
 
 .eyebrow {
   margin-bottom: 0.75rem;
-  color: var(--primary-600);
+  color: var(--primary-500);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;

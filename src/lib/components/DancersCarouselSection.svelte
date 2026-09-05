@@ -64,8 +64,8 @@
   .carousel { width: 100%; margin-top: 0; padding-block: 2.75rem; overflow: hidden; mask-image: linear-gradient(to right, var(--transparent), var(--black) 4%, var(--black) 96%, var(--transparent)); -webkit-mask-image: linear-gradient(to right, var(--transparent), var(--black) 4%, var(--black) 96%, var(--transparent)); }
   .track { display: flex; width: max-content; animation: marquee 65s linear infinite; will-change: transform; }
   .dancer-list { display: flex; gap: 2.75rem; padding-right: 2.75rem; }
-  .dancer-card { position: relative; width: clamp(10.5rem, 38vw, 13rem); flex: 0 0 auto; isolation: isolate; overflow: hidden; border-radius: .85rem; outline: 1px solid var(--header-color); outline-offset: -1px; color: var(--white); background: var(--primary-700); }
-  .photo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--primary-700); }
+  .dancer-card { position: relative; width: clamp(10.5rem, 38vw, 13rem); flex: 0 0 auto; isolation: isolate; overflow: hidden; border-radius: .85rem; outline: 1px solid var(--header-color); outline-offset: -1px; color: var(--white); background: var(--primary-500); }
+  .photo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--primary-500); }
   .photo img { width: 100%; height: 100%; object-fit: cover; filter: blur(9px) saturate(.78); transform: scale(1.11); -webkit-user-drag: none; }
   .photo img.flipped { transform: scale(-1.11, 1.11); }
   .photo::after { position: absolute; z-index: 1; right: 0; bottom: 0; left: 0; height: 46%; content: ''; background: linear-gradient(var(--transparent), color-mix(in srgb, var(--primary-900) 62%, var(--transparent))); pointer-events: none; }

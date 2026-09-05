@@ -105,7 +105,7 @@
   .more-link {
     padding: 0;
     border: 0;
-    color: var(--primary-700);
+    color: var(--primary-500);
     background: var(--transparent);
     font: inherit;
     font-size: .875rem;
@@ -117,7 +117,7 @@
 
   .more-link:hover,
   .close:hover {
-    color: var(--primary-600);
+    color: var(--primary-500);
   }
 
   .more-link:focus-visible,
@@ -169,7 +169,7 @@
   }
 
   .profile-links a {
-    color: var(--primary-700);
+    color: var(--primary-500);
     font-weight: 600;
     text-underline-offset: .2em;
   }

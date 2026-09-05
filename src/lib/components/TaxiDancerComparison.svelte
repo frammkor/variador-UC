@@ -69,7 +69,7 @@
   .comparison :global(.eyebrow),
   .comparison :global(.section-title),
   .comparison :global(.section-intro) { margin-inline: auto; text-align: center; }
-  .comparison :global(.eyebrow) { color: var(--primary-600); }
+  .comparison :global(.eyebrow) { color: var(--primary-500); }
   .comparison-head { display: none; }
   .comparison-rows { display: flex; gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .comparison-rows::-webkit-scrollbar { display: none; }
@@ -80,12 +80,12 @@
   .comparison-row .dandy { grid-column: 1 / -1; min-height: 5.5rem; border-left: 0; background: var(--primary-50); }
   .comparison-row p { margin: .25rem 0 0; font-size: .875rem; line-height: 1.2rem; }
   .mobile-label { color: var(--muted-color); font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-  .dandy .mobile-label { color: var(--primary-700); }
+  .dandy .mobile-label { color: var(--primary-500); }
   .carousel-progress { display: flex; gap: .5rem; margin-top: 1rem; justify-content: center; }
   .carousel-progress button { width: .625rem; height: .625rem; padding: 0; border: 0; border-radius: 50%; background: var(--primary-200); cursor: pointer; }
-  .carousel-progress button.active { background: var(--primary-600); box-shadow: 0 0 0 3px var(--primary-50); }
+  .carousel-progress button.active { background: var(--primary-500); box-shadow: 0 0 0 3px var(--primary-50); }
   .carousel-hint { margin: .5rem 0 0; color: var(--muted-color); font-size: .75rem; text-align: center; }
-  .cta { display: flex; width: fit-content; min-height: 3rem; margin: 2rem auto 0; padding: .8rem 1.25rem; align-items: center; justify-content: center; border-radius: 999px; color: var(--white); background: var(--primary-600); font-weight: 700; text-decoration: none; }
+  .cta { display: flex; width: fit-content; min-height: 3rem; margin: 2rem auto 0; padding: .8rem 1.25rem; align-items: center; justify-content: center; border-radius: 999px; color: var(--white); background: var(--primary-500); font-weight: 700; text-decoration: none; }
 
   @media (min-width: 64rem) {
     .comparison-head,

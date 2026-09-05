@@ -145,8 +145,8 @@
 <style>
   .preview { display: grid; justify-items: center; }
   .label { margin: .75rem 0 0; color: var(--muted-color); font-size: .6875rem; }
-  .phone { position: relative; display: block; width: min(82vw, 17rem, 39svh); aspect-ratio: 1 / 2; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: var(--gray-800); background: var(--gray-900); box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--primary-600) 18%, var(--transparent)); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-  .phone:focus-visible { outline: 3px solid var(--primary-600); outline-offset: .35rem; }
+  .phone { position: relative; display: block; width: min(82vw, 17rem, 39svh); aspect-ratio: 1 / 2; padding: 8px; overflow: hidden; border-radius: 2.65rem; color: var(--gray-800); background: var(--gray-900); box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--primary-500) 18%, var(--transparent)); cursor: pointer; text-align: left; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .phone:focus-visible { outline: 3px solid var(--primary-500); outline-offset: .35rem; }
   .speaker { position: absolute; z-index: 3; top: 17px; left: 50%; width: 4.8rem; height: .55rem; border-radius: 999px; background: var(--gray-900); transform: translateX(-50%); }
   .screen { position: relative; display: flex; width: 100%; height: 100%; box-sizing: border-box; flex-direction: column; overflow: hidden; padding: 5.7rem .85rem 1.5rem; border-radius: 2.18rem; background: var(--white); }
   h3 { margin: 0 0 .8rem; color: var(--gray-800); font-size: 1.12rem; font-weight: 750; letter-spacing: -.02em; }
@@ -161,7 +161,7 @@
   .search-copy small { color: var(--gray-500); font-size: .5rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
   .search-copy strong { font-size: .77rem; }
   .search-copy span { color: var(--gray-600); font-size: .58rem; }
-  .detail-card { display: grid; min-height: 0; gap: .65rem; padding: .8rem; overflow-y: auto; border: 1px solid var(--primary-200); border-radius: .9rem; background: color-mix(in srgb, var(--primary-600) 5%, var(--white)); box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-600) 8%, var(--transparent)); scrollbar-width: none; }
+  .detail-card { display: grid; min-height: 0; gap: .65rem; padding: .8rem; overflow-y: auto; border: 1px solid var(--primary-200); border-radius: .9rem; background: color-mix(in srgb, var(--primary-500) 5%, var(--white)); box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-500) 8%, var(--transparent)); scrollbar-width: none; }
   .detail-card::-webkit-scrollbar { display: none; }
   .profile-heading { display: grid; grid-template-columns: 3rem 1fr auto; gap: .65rem; align-items: center; }
   .profile-name { display: flex; min-width: 0; flex-direction: column; }
@@ -178,11 +178,11 @@
   .payment-summary { display: flex; padding: .55rem .65rem; align-items: center; justify-content: space-between; gap: .5rem; border: 1px solid var(--primary-200); border-radius: .6rem; background: var(--white); }
   .payment-summary > span { display: flex; flex-direction: column; }
   .payment-summary small { color: var(--gray-500); font-size: .5rem; line-height: 1.3; }
-  .payment-summary strong { color: var(--primary-700); font-size: .88rem; line-height: 1.15; }
-  .continue { display: flex; width: 100%; flex: 0 0 auto; box-sizing: border-box; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border-radius: .7rem; color: var(--white); background: var(--primary-600); font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px color-mix(in srgb, var(--primary-600) 24%, var(--transparent)); }
+  .payment-summary strong { color: var(--primary-500); font-size: .88rem; line-height: 1.15; }
+  .continue { display: flex; width: 100%; flex: 0 0 auto; box-sizing: border-box; align-items: center; justify-content: space-between; margin-top: auto; padding: .72rem .9rem; border-radius: .7rem; color: var(--white); background: var(--primary-500); font-size: .68rem; font-weight: 700; box-shadow: 0 5px 12px color-mix(in srgb, var(--primary-500) 24%, var(--transparent)); }
   .success { display: flex; height: 100%; align-items: center; justify-content: center; flex-direction: column; text-align: center; }
-  .success-mark { display: grid; width: 4rem; height: 4rem; margin-bottom: 1.2rem; place-items: center; border-radius: 50%; color: var(--white); background: linear-gradient(145deg, var(--primary-500), var(--primary-800)); box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-600) 28%, var(--transparent)); font-size: 2rem; }
-  .success > small { color: var(--primary-600); font-size: .55rem; font-weight: 800; letter-spacing: .14em; }
+  .success-mark { display: grid; width: 4rem; height: 4rem; margin-bottom: 1.2rem; place-items: center; border-radius: 50%; color: var(--white); background: linear-gradient(145deg, var(--primary-500), var(--primary-800)); box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-500) 28%, var(--transparent)); font-size: 2rem; }
+  .success > small { color: var(--primary-500); font-size: .55rem; font-weight: 800; letter-spacing: .14em; }
   .success > strong { margin: .45rem 0; font-size: 1.35rem; letter-spacing: -.03em; }
   .success > span:not(.success-mark, .summary, .success-note) { color: var(--gray-500); font-size: .67rem; }
   .summary { width: 100%; box-sizing: border-box; margin: 1.3rem 0 1rem; padding: .9rem; border: 1px solid var(--primary-200); border-radius: .8rem; background: var(--primary-surface); font-size: .63rem; line-height: 1.6; }
@@ -190,7 +190,7 @@
   .screen-hint { position: absolute; right: 0; bottom: .45rem; left: 0; color: var(--gray-400); font-size: .47rem; text-align: center; }
   .progress { display: flex; gap: .5rem; margin-top: 1rem; }
   .progress button { width: .625rem; height: .625rem; padding: 0; border: 0; border-radius: 50%; background: var(--primary-200); cursor: pointer; }
-  .progress button.active { background: var(--primary-600); }
+  .progress button.active { background: var(--primary-500); }
 
   @media (min-width: 48rem) {
     .phone { width: 18.25rem; aspect-ratio: 280 / 590; }

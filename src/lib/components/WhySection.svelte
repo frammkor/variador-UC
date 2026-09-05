@@ -47,7 +47,7 @@
   }
 
   .why :global(.eyebrow) {
-    color: var(--primary-600);
+    color: var(--primary-500);
     text-align: center;
   }
 
@@ -100,7 +100,7 @@
     justify-content: center;
     border-radius: 999px;
     color: var(--white);
-    background: var(--primary-600);
+    background: var(--primary-500);
     font-weight: 700;
     text-decoration: none;
   }

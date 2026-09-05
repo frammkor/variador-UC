@@ -132,10 +132,10 @@
     padding: 0.8rem 1.25rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--primary-600);
+    border: 1px solid var(--primary-500);
     border-radius: 999px;
     color: var(--white);
-    background: var(--primary-600);
+    background: var(--primary-500);
     font-weight: 700;
     text-decoration: none;
   }
@@ -200,7 +200,7 @@
   }
 
   .close:hover {
-    color: var(--primary-600);
+    color: var(--primary-500);
   }
 
   @media (min-width: 55rem) {

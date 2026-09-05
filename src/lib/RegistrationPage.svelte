@@ -87,7 +87,7 @@
         90deg,
         color-mix(in srgb, var(--primary-900) 66%, var(--transparent)) 0%,
         color-mix(in srgb, var(--primary-900) 46%, var(--transparent)) 52%,
-        color-mix(in srgb, var(--primary-700) 18%, var(--transparent)) 100%
+        color-mix(in srgb, var(--primary-500) 18%, var(--transparent)) 100%
       ),
       url('/images/taxis-hero.webp') center / cover no-repeat;
   }
@@ -128,10 +128,10 @@
     padding: 0.8rem 1.25rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--primary-600);
+    border: 1px solid var(--primary-500);
     border-radius: 999px;
     color: var(--white);
-    background: var(--primary-600);
+    background: var(--primary-500);
     font-weight: 700;
     text-decoration: none;
   }
