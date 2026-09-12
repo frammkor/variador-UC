@@ -1,4 +1,4 @@
-export const taxiDancerFormUrl = 'https://forms.gle/rsAyr8GeK8KozgZj6';
+export const taxiDancerFormUrl = 'https://forms.gle/xBP9ziEp49dAr5hq9';
 export const whatsappUrl = 'https://wa.me/5491155284015';
 export const taxiDancerInquiryMessage = 'Estoy interesado en el servicio de taxi dancers.';
 
